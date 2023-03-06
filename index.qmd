@@ -1,0 +1,226 @@
+---
+title: "Why your code doesn't reproduce: Lessons learned from Meta-Psychology"
+title-slide-style: pandoc
+author: "Lucija Batinovic & Rickard Carlsson<br>Meta-Psychology<br>March 10, 2023"
+format:
+  revealjs:
+    slide-number: c/t
+    footer: "[Meta-Psychology](https://open.lnu.se/index.php/metapsychology/index)"
+    title-slide-attributes: 
+      data-background-image: "pictures/logo.png"
+      data-background-size: 17%
+      data-background-position: 1.5% 1.5%
+    theme: [custom.scss]
+    execute:
+      echo: true
+      eval: false
+   #incremental: true
+    scrollable: true
+   #smaller: true
+---
+
+## Agenda
+ 
+-   Meta-Psychology computational reproducibility assessment
+-   Common Mistakes in Computational Reproducibility
+-   Best Practices for Reproducible Analyses: R and Jamovi
+-   Conclusion and Resources
+-   Exercise
+  
+# Computational Reproducibility Check 
+## Overview {.smaller}
+- 47 articles reproduced (of 65 published) since journal's inception in 2017
+- papers reproduced in 2022: 13
+- papers reproduced without any errors: 2 (with one being simulation study that required running code with fewer iterations)
+- errors in code: 8 (e.g., missing library calls, problems knitting reports, container-emulating packages, deprecated functions)
+- errors in reported results: 6 (e.g., wrong sample size, mean, plot output discrepancy, copy paste error, package update changed output)
+
+## Reproducibility Checklist
+![](images/checklist.png){fig-align="center"}
+
+# Common Errors in Computational Reproducibility
+## Most common errors we encountered happened because of:
+- Renaming files
+- Deprecated functions
+- Functions that were not working as they should
+- Hard-coding file paths
+- Older software versions
+
+## Deprecated Functions
+What are deprecated functions
+- Explain what deprecated functions are and why they can cause issues
+
+## How to replace deprecated functions
+- Demonstrate how to identify and replace deprecated functions in R scripts
+
+
+##  Functions Not Working as They Should
+Common reasons why a function may not run properly:
+ 1. Incorrect input arguments or parameters
+ 2. Undefined or out-of-scope variables
+ 3. Missing or outdated dependencies
+ 4. Improper syntax or formatting errors
+ 5. Logical errors or incorrect algorithmic design
+
+```{r}
+# Example function call without loading library
+my_function()
+
+Error in my_function() : could not find function "my_function"
+```
+
+## How to troubleshoot function errors
+- Demonstrate how to troubleshoot function errors in R
+
+```{r}
+# Using the help() function
+help(lm)
+# Using the ? shortcut
+?lm
+```
+
+## Hard-Coding File Paths
+Why hard-coding file paths can cause issues
+- Explain why hard-coding file paths can cause issues
+- Provide examples of how hard-coding can cause reproducibility errors
+```{r}
+# Hard-coded file path
+data_file <- "C:/Users/username/Documents/data.csv"
+
+# Load data from file
+data <- read.csv(data_file)
+```
+
+## Software Versions
+- Not stating which version of the software was used can cause troubles while reproducing the results in different environments
+```{r}
+Error: package 'dplyr' requires R version 4.0.0 or later
+```
+
+- on the other hand, some packages may stop being maintained and newer versions of software can cause issues with functions
+
+```{r}
+Warning: package 'plyr' was built under R version 3.6.3
+```
+
+
+# Reasons for Non-Replicable Results
+## Most common reasons for non-replicable results
+- Discuss the most common reasons for non-replicable results in computational analysis
+- Explain how to avoid these errors
+
+## Examples of each reason for non-replicable results
+- Provide examples of each reason for non-replicable results
+
+## Setting Seed for Simulations
+The importance of setting a seed
+- Explain why setting a seed is important for reproducible simulations
+- Provide examples of how to set a seed in R
+
+How to set a seed for simulations in R
+- Demonstrate how to set a seed for simulations in R
+
+
+## Wrong Rounding
+
+## Copy-Paste Errors
+- Discuss how copy-paste errors can occur and impact reproducibility
+- Provide examples of how copy-paste errors can cause issues
+```{r}
+#| echo = TRUE, eval = TRUE
+data <- iris
+# Hard-coded result
+cat("The mean value is 5.")
+
+# Extracted from code
+cat(paste0("The mean value is ", round(mean(iris$Sepal.Length), 2), "."))
+
+```
+
+<!-- Examples of how to do it properly starts here -->
+
+# Project structure
+## Importance of structure
+- https://drivendata.github.io/cookiecutter-data-science/
+- creating projects allows using relative paths 
+- projects can be easily sent to and managed by other people
+- hierarchical project structure makes the analysis process clearer for the third party
+
+```{r}
+#| eval = FALSE
+my_project/
+├── README.txt
+├── codebook.txt
+├── data/
+│   ├── raw/
+│   │   ├── data_file_1.csv
+│   │   ├── data_file_2.csv
+│   │   └── ...
+│   ├── processed/
+│   │   ├── data_file_1_cleaned.csv
+│   │   ├── data_file_2_cleaned.csv
+│   │   └── ...
+│   └── ...
+├── docs/
+│   ├── report.pdf
+│   ├── manuscript.Rmd
+│   └── ...
+├── src/
+│   ├── data_cleaning.R
+│   ├── data_analysis.R
+│   └── ...
+└── ...
+
+```
+
+## Best practices for file naming conventions
+- consistency: keep capitalization consistent, as well as use of punctuation, avoid special characters
+- clarity: names should be descriptive and clear, even if it means it will be longer
+- chronology: names should indicate the correct order of steps
+
+## README and codebook files {.smaller}
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.fragment}
+
+README
+
+::: {.incremental}
+- Computing environment; package version and time necessary to compute (show reproducibility checklists) 
+- Project description: A brief description of the project and its purpose.
+- Installation instructions: Step-by-step instructions on how to install and set up the project. This should include any dependencies or prerequisites required to run the project
+:::
+
+:::
+
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+
+Codebook
+
+::: {.incremental}
+- Overview of all variables: name and description of each variable
+- Description
+:::
+
+:::
+
+::: 
+
+::::
+
+## Containerization
+- Docker
+- Codeocean or
+- R packages (e.g., renv)
+
+# Practice
+## Task
+- try to reproduce code from a paper accepted for publication in MP
+- note down what's causing troubles in reproducing the paper
+- note down what is correctly done
+- compare the results from the code output to reported results in the manuscript
+

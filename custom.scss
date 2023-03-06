@@ -1,0 +1,45 @@
+/*-- scss:defaults --*/
+$theme-tuna: #353843;
+$theme-busyellow: #FFE000;
+$theme-corn: #E9C700;
+$theme-minttulip: #CCF5F0;
+$theme-turquoise: #32D5C7;
+$theme-cerulean: #01B3E7;
+$theme-shuttlegray: #5F6472;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+$font-family-sans-serif: 'Roboto', sans-serif;
+$presentation-heading-font: 'Roboto', sans-serif;
+
+$body-bg: $theme-minttulip;
+$body-color: $theme-shuttlegray;
+$link-color: $theme-corn; 
+$presentation-heading-color: $theme-shuttlegray;
+$presentation-heading-font-weight: 70;
+$presentation-heading-font-size: 40;
+$presentation-title-slide-text-align: center;
+
+
+$code-color: $theme-shuttlegray;
+$code-block-bg: #F6FAC9;
+$code-block-border-color: $theme-tuna;
+
+$heading2Size: 50px;
+
+/*-- scss:rules --*/
+
+.title {
+  font-size: 50px !important;
+  color: $theme-shuttlegray !important;
+}
+
+.author {
+  font-size: 20px;
+  color: $theme-shuttlegray !important;
+  text-align: center;
+}
+
+

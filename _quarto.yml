@@ -1,0 +1,5 @@
+project:
+  title: "MP_Repro_workshop"
+  type: website
+  output-dir: docs
+
