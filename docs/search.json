@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "index.html#agenda",
+    "href": "index.html#agenda",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Agenda",
+    "text": "Agenda\n\nMeta-Psychology computational reproducibility assessment\nCommon Mistakes in Computational Reproducibility\nBest Practices for Reproducible Analyses: R and Jamovi\nConclusion and Resources\nExercise"
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Overview",
+    "text": "Overview\n\n47 articles reproduced (of 65 published) since journal’s inception in 2017\npapers reproduced in 2022: 13\npapers reproduced without any errors: 2 (with one being simulation study that required running code with fewer iterations)\nerrors in code: 8 (e.g., missing library calls, problems knitting reports, container-emulating packages, deprecated functions)\nerrors in reported results: 6 (e.g., wrong sample size, mean, plot output discrepancy, copy paste error, package update changed output)"
+  },
+  {
+    "objectID": "index.html#reproducibility-checklist",
+    "href": "index.html#reproducibility-checklist",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Reproducibility Checklist",
+    "text": "Reproducibility Checklist"
+  },
+  {
+    "objectID": "index.html#most-common-errors-we-encountered-happened-because-of",
+    "href": "index.html#most-common-errors-we-encountered-happened-because-of",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Most common errors we encountered happened because of:",
+    "text": "Most common errors we encountered happened because of:\n\nRenaming files\nDeprecated functions\nFunctions that were not working as they should\nHard-coding file paths\nOlder software versions"
+  },
+  {
+    "objectID": "index.html#deprecated-functions",
+    "href": "index.html#deprecated-functions",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Deprecated Functions",
+    "text": "Deprecated Functions\nWhat are deprecated functions - Explain what deprecated functions are and why they can cause issues"
+  },
+  {
+    "objectID": "index.html#how-to-replace-deprecated-functions",
+    "href": "index.html#how-to-replace-deprecated-functions",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "How to replace deprecated functions",
+    "text": "How to replace deprecated functions\n\nDemonstrate how to identify and replace deprecated functions in R scripts"
+  },
+  {
+    "objectID": "index.html#functions-not-working-as-they-should",
+    "href": "index.html#functions-not-working-as-they-should",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Functions Not Working as They Should",
+    "text": "Functions Not Working as They Should\nCommon reasons why a function may not run properly: 1. Incorrect input arguments or parameters 2. Undefined or out-of-scope variables 3. Missing or outdated dependencies 4. Improper syntax or formatting errors 5. Logical errors or incorrect algorithmic design\n\n# Example function call without loading library\nmy_function()\n\nError in my_function() : could not find function \"my_function\""
+  },
+  {
+    "objectID": "index.html#how-to-troubleshoot-function-errors",
+    "href": "index.html#how-to-troubleshoot-function-errors",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "How to troubleshoot function errors",
+    "text": "How to troubleshoot function errors\n\nDemonstrate how to troubleshoot function errors in R\n\n\n# Using the help() function\nhelp(lm)\n# Using the ? shortcut\n?lm"
+  },
+  {
+    "objectID": "index.html#hard-coding-file-paths",
+    "href": "index.html#hard-coding-file-paths",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Hard-Coding File Paths",
+    "text": "Hard-Coding File Paths\nWhy hard-coding file paths can cause issues - Explain why hard-coding file paths can cause issues - Provide examples of how hard-coding can cause reproducibility errors\n\n# Hard-coded file path\ndata_file <- \"C:/Users/username/Documents/data.csv\"\n\n# Load data from file\ndata <- read.csv(data_file)"
+  },
+  {
+    "objectID": "index.html#software-versions",
+    "href": "index.html#software-versions",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Software Versions",
+    "text": "Software Versions\n\nNot stating which version of the software was used can cause troubles while reproducing the results in different environments\n\n\nError: package 'dplyr' requires R version 4.0.0 or later\n\n\non the other hand, some packages may stop being maintained and newer versions of software can cause issues with functions\n\n\nWarning: package 'plyr' was built under R version 3.6.3"
+  },
+  {
+    "objectID": "index.html#most-common-reasons-for-non-replicable-results",
+    "href": "index.html#most-common-reasons-for-non-replicable-results",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Most common reasons for non-replicable results",
+    "text": "Most common reasons for non-replicable results\n\nDiscuss the most common reasons for non-replicable results in computational analysis\nExplain how to avoid these errors"
+  },
+  {
+    "objectID": "index.html#examples-of-each-reason-for-non-replicable-results",
+    "href": "index.html#examples-of-each-reason-for-non-replicable-results",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Examples of each reason for non-replicable results",
+    "text": "Examples of each reason for non-replicable results\n\nProvide examples of each reason for non-replicable results"
+  },
+  {
+    "objectID": "index.html#setting-seed-for-simulations",
+    "href": "index.html#setting-seed-for-simulations",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Setting Seed for Simulations",
+    "text": "Setting Seed for Simulations\nThe importance of setting a seed - Explain why setting a seed is important for reproducible simulations - Provide examples of how to set a seed in R\nHow to set a seed for simulations in R - Demonstrate how to set a seed for simulations in R"
+  },
+  {
+    "objectID": "index.html#wrong-rounding",
+    "href": "index.html#wrong-rounding",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Wrong Rounding",
+    "text": "Wrong Rounding"
+  },
+  {
+    "objectID": "index.html#copy-paste-errors",
+    "href": "index.html#copy-paste-errors",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Copy-Paste Errors",
+    "text": "Copy-Paste Errors\n\nDiscuss how copy-paste errors can occur and impact reproducibility\nProvide examples of how copy-paste errors can cause issues\n\n\ndata <- iris\n# Hard-coded result\ncat(\"The mean value is 5.\")\n\nThe mean value is 5.\n\n# Extracted from code\ncat(paste0(\"The mean value is \", round(mean(iris$Sepal.Length), 2), \".\"))\n\nThe mean value is 5.84."
+  },
+  {
+    "objectID": "index.html#importance-of-structure",
+    "href": "index.html#importance-of-structure",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Importance of structure",
+    "text": "Importance of structure\n\nhttps://drivendata.github.io/cookiecutter-data-science/\ncreating projects allows using relative paths\nprojects can be easily sent to and managed by other people\nhierarchical project structure makes the analysis process clearer for the third party\n\n\nmy_project/\n├── README.txt\n├── codebook.txt\n├── data/\n│   ├── raw/\n│   │   ├── data_file_1.csv\n│   │   ├── data_file_2.csv\n│   │   └── ...\n│   ├── processed/\n│   │   ├── data_file_1_cleaned.csv\n│   │   ├── data_file_2_cleaned.csv\n│   │   └── ...\n│   └── ...\n├── docs/\n│   ├── report.pdf\n│   ├── manuscript.Rmd\n│   └── ...\n├── src/\n│   ├── data_cleaning.R\n│   ├── data_analysis.R\n│   └── ...\n└── ..."
+  },
+  {
+    "objectID": "index.html#best-practices-for-file-naming-conventions",
+    "href": "index.html#best-practices-for-file-naming-conventions",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Best practices for file naming conventions",
+    "text": "Best practices for file naming conventions\n\nconsistency: keep capitalization consistent, as well as use of punctuation, avoid special characters\nclarity: names should be descriptive and clear, even if it means it will be longer\nchronology: names should indicate the correct order of steps"
+  },
+  {
+    "objectID": "index.html#readme-and-codebook-files",
+    "href": "index.html#readme-and-codebook-files",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "README and codebook files",
+    "text": "README and codebook files\n\n\n\nREADME\n\n\nComputing environment; package version and time necessary to compute (show reproducibility checklists)\nProject description: A brief description of the project and its purpose.\nInstallation instructions: Step-by-step instructions on how to install and set up the project. This should include any dependencies or prerequisites required to run the project\n\n\n\n\n\nCodebook\n\n\nOverview of all variables: name and description of each variable\nDescription"
+  },
+  {
+    "objectID": "index.html#containerization",
+    "href": "index.html#containerization",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Containerization",
+    "text": "Containerization\n\nDocker\nCodeocean or\nR packages (e.g., renv)"
+  },
+  {
+    "objectID": "index.html#task",
+    "href": "index.html#task",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Task",
+    "text": "Task\n\ntry to reproduce code from a paper accepted for publication in MP\nnote down what’s causing troubles in reproducing the paper\nnote down what is correctly done\ncompare the results from the code output to reported results in the manuscript\n\n\n\nMeta-Psychology"
+  }
+]
