@@ -7,7 +7,7 @@ format:
     slide-number: c/t
     footer: "[Meta-Psychology](https://open.lnu.se/index.php/metapsychology/index)"
     title-slide-attributes: 
-      data-background-image: "pictures/logo.png"
+      data-background-image: "images/logo.png"
       data-background-size: 17%
       data-background-position: 1.5% 1.5%
     theme: [custom.scss]
