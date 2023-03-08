@@ -23,9 +23,9 @@ format:
  
 -   Meta-Psychology computational reproducibility assessment
 -   Common Mistakes in Computational Reproducibility
--   Best Practices for Reproducible Analyses: R and Jamovi
--   Conclusion and Resources
--   Exercise
+-   Best Practices for Reproducible Analyses
+-   Exercise (1 hour)
+-   Discussion (15 min)
 
 ## Quick overview of the exercise
 - try to reproduce code from a paper accepted for publication in MP
@@ -48,54 +48,58 @@ format:
 # Common Errors in Computational Reproducibility
 ## Most common errors we encountered happened because of:
 - Renaming files
-- Deprecated functions
 - Functions that were not working as they should
+    - Deprecated functions
 - Hard-coding file paths
 - Older software versions
 
-## Deprecated Functions
-What are deprecated functions
-- Explain what deprecated functions are and why they can cause issues
-
-## How to replace deprecated functions
-- Demonstrate how to identify and replace deprecated functions in R scripts
-
-
-##  Functions Not Working as They Should
-Common reasons why a function may not run properly:
- 1. Incorrect input arguments or parameters
- 2. Undefined or out-of-scope variables
- 3. Missing or outdated dependencies
- 4. Improper syntax or formatting errors
- 5. Logical errors or incorrect algorithmic design
-
+##  Functions Not Working {.smaller}
+Common reasons why a function may not run properly: \par
+- Incorrect input arguments or parameters
+- Undefined or out-of-scope variables
+- Missing or outdated dependencies
 ```{r}
 # Example function call without loading library
 my_function()
 
-Error in my_function() : could not find function "my_function"
+`Error in my_function() : could not find function "my_function"`
 ```
-
-## How to troubleshoot function errors
-- Demonstrate how to troubleshoot function errors in R
+- Deprecated functions
 
 ```{r}
-# Using the help() function
-help(lm)
-# Using the ? shortcut
-?lm
+mydata <- read.csv("myfile.csv", header=TRUE)
+
+`Warning message: In read.csv("myfile.csv", header = TRUE) :
+   'read.csv' is deprecated: use 'read.csv2' instead`
 ```
 
+- Improper syntax or formatting errors
+- Logical errors or incorrect algorithmic design
+
+<!-- ## How to troubleshoot function errors -->
+<!-- - Demonstrate how to troubleshoot function errors in R -->
+
+<!-- ```{r} -->
+<!-- # Using the help() function -->
+<!-- help(lm) -->
+<!-- # Using the ? shortcut -->
+<!-- ?lm -->
+<!-- ``` -->
+
 ## Hard-Coding File Paths
-Why hard-coding file paths can cause issues
-- Explain why hard-coding file paths can cause issues
-- Provide examples of how hard-coding can cause reproducibility errors
+- hard-coding the absolute path to the file will cause issues when running the code in a different environment
 ```{r}
 # Hard-coded file path
 data_file <- "C:/Users/username/Documents/data.csv"
 
 # Load data from file
 data <- read.csv(data_file)
+```
+
+- relative paths allow reproducing code across computers and operating systems
+```{r}
+# load data from a directory in the project 
+data_file <- "data/data.csv"
 ```
 
 ## Software Versions
@@ -111,28 +115,39 @@ Warning: package 'plyr' was built under R version 3.6.3
 ```
 
 
-# Reasons for Non-Replicable Results
-## Most common reasons for non-replicable results
-- Discuss the most common reasons for non-replicable results in computational analysis
-- Explain how to avoid these errors
-
-## Examples of each reason for non-replicable results
-- Provide examples of each reason for non-replicable results
+# Reasons for non-reproducible Results
+## Most common reasons for non-reproducible results
+- copy-paste errors
+- wrong rounding
+- simulation based analyses 
 
 ## Setting Seed for Simulations
-The importance of setting a seed
-- Explain why setting a seed is important for reproducible simulations
-- Provide examples of how to set a seed in R
+- bootstrapping confidence intervals
+- simulating datasets
+```{r}
+#| echo = TRUE, eval = TRUE
+head(rnorm(100, mean = 0, sd = 1))
+```
 
-How to set a seed for simulations in R
-- Demonstrate how to set a seed for simulations in R
+```{r}
+#| echo = TRUE, eval = TRUE
+set.seed(1234)
+head(rnorm(100, mean = 0, sd = 1))
+```
 
 
 ## Wrong Rounding
+```{r}
+#| echo = TRUE, eval = TRUE
+data <- iris
+mean(iris$Sepal.Width)
+round(mean(iris$Sepal.Width))
+round(mean(iris$Sepal.Width), 2)
+```
+
 
 ## Copy-Paste Errors
-- Discuss how copy-paste errors can occur and impact reproducibility
-- Provide examples of how copy-paste errors can cause issues
+
 ```{r}
 #| echo = TRUE, eval = TRUE
 data <- iris
@@ -144,11 +159,14 @@ cat(paste0("The mean value is ", round(mean(iris$Sepal.Length), 2), "."))
 
 ```
 
+- compiling reports that contain the code and results in one document allows a simpler workflow and minimizes errors caused by copy-pasting
+- [papaja](https://cran.r-project.org/web/packages/papaja/index.html) package in R
+
 <!-- Examples of how to do it properly starts here -->
 
-# Project structure
+# Project structure {.smaller}
 ## Importance of structure
-- https://drivendata.github.io/cookiecutter-data-science/
+- [Psych-DS](https://psych-ds.github.io/)
 - creating projects allows using relative paths 
 - projects can be easily sent to and managed by other people
 - hierarchical project structure makes the analysis process clearer for the third party
@@ -219,15 +237,23 @@ Codebook
 
 ::::
 
-## Containerization
-- Docker
-- Codeocean 
-- R packages (e.g., renv)
+## Containerization {.smaller}
+- [Docker](https://www.docker.com/)
+- [Codeocean](https://codeocean.com/) 
+- R packages (e.g., [renv](https://cran.r-project.org/web/packages/renv/index.html))
+![](images/codeocean.png){fig-align="center"}
+
+## GUI alternative
+- open source: [JASP](https://jasp-stats.org/) or [JAMOVI](https://www.jamovi.org/)
+- jamovi files can be saved with analyses and edited data in a transparent way
+![](images/jamovi-lr.png){fig-align="center"}
+*Note: although .omv (jamovi) files include datasets, always provide raw .tsv/.csv files separately
 
 # Practice
+
 ## Task
 - try to reproduce code from a paper accepted for publication in MP
-- note down what's causing troubles in reproducing the paper
+- note down what's causing troubles in reproducing the paper (if anything)
 - note down what is correctly done
 - compare the results from the code output to reported results in the manuscript
 
