@@ -243,11 +243,13 @@ Codebook
 - R packages (e.g., [renv](https://cran.r-project.org/web/packages/renv/index.html))
 ![](images/codeocean.png){fig-align="center"}
 
-## GUI alternative
+## GUI alternative {.smaller}
 - open source: [JASP](https://jasp-stats.org/) or [JAMOVI](https://www.jamovi.org/)
 - jamovi files can be saved with analyses and edited data in a transparent way
-![](images/jamovi-lr.png){fig-align="center"}
 *Note: although .omv (jamovi) files include datasets, always provide raw .tsv/.csv files separately
+![](images/jamovi-lr.png){fig-align="center"}
+
+
 
 # Practice
 

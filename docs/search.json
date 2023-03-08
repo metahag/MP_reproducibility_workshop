@@ -67,7 +67,7 @@
     "href": "index.html#setting-seed-for-simulations",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "Setting Seed for Simulations",
-    "text": "Setting Seed for Simulations\n\nbootstrapping confidence intervals\nsimulating datasets\n\n\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1]  0.8981578 -0.3360718 -0.6018165  0.4782878  0.2124977  0.8700404\n\n\n\nset.seed(1234)\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1] -1.2070657  0.2774292  1.0844412 -2.3456977  0.4291247  0.5060559"
+    "text": "Setting Seed for Simulations\n\nbootstrapping confidence intervals\nsimulating datasets\n\n\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1]  0.4469973 -0.1725702  0.4100802 -0.1675563 -0.3200588  1.0176700\n\n\n\nset.seed(1234)\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1] -1.2070657  0.2774292  1.0844412 -2.3456977  0.4291247  0.5060559"
   },
   {
     "objectID": "index.html#wrong-rounding",
@@ -116,7 +116,7 @@
     "href": "index.html#gui-alternative",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "GUI alternative",
-    "text": "GUI alternative\n\nopen source: JASP or JAMOVI\njamovi files can be saved with analyses and edited data in a transparent way  *Note: although .omv (jamovi) files include datasets, always provide raw .tsv/.csv files separately"
+    "text": "GUI alternative\n\nopen source: JASP or JAMOVI\njamovi files can be saved with analyses and edited data in a transparent way *Note: although .omv (jamovi) files include datasets, always provide raw .tsv/.csv files separately"
   },
   {
     "objectID": "index.html#task",
