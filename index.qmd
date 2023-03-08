@@ -26,14 +26,21 @@ format:
 -   Best Practices for Reproducible Analyses: R and Jamovi
 -   Conclusion and Resources
 -   Exercise
-  
+
+## Quick overview of the exercise
+- try to reproduce code from a paper accepted for publication in MP
+- note down what's causing troubles in reproducing the paper
+- note down what is correctly done
+- compare the results from the code output to reported results in the manuscript
+## Introduction to reproducibility
+
 # Computational Reproducibility Check 
 ## Overview {.smaller}
-- 47 articles reproduced (of 65 published) since journal's inception in 2017
+- 47 articles reproduced since journal's inception in 2017
 - papers reproduced in 2022: 13
-- papers reproduced without any errors: 2 (with one being simulation study that required running code with fewer iterations)
-- errors in code: 8 (e.g., missing library calls, problems knitting reports, container-emulating packages, deprecated functions)
-- errors in reported results: 6 (e.g., wrong sample size, mean, plot output discrepancy, copy paste error, package update changed output)
+    - papers reproduced without any errors: 2 (with one being simulation study that required running code with fewer iterations)
+    - errors in code: 8 (e.g., missing library calls, problems knitting reports, container-emulating packages, deprecated functions)
+    - errors in reported results: 6 (e.g., wrong sample size, mean, plot output discrepancy, copy paste error, package update changed output)
 
 ## Reproducibility Checklist
 ![](images/checklist.png){fig-align="center"}
@@ -214,7 +221,7 @@ Codebook
 
 ## Containerization
 - Docker
-- Codeocean or
+- Codeocean 
 - R packages (e.g., renv)
 
 # Practice

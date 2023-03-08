@@ -7,11 +7,18 @@
     "text": "Agenda\n\nMeta-Psychology computational reproducibility assessment\nCommon Mistakes in Computational Reproducibility\nBest Practices for Reproducible Analyses: R and Jamovi\nConclusion and Resources\nExercise"
   },
   {
+    "objectID": "index.html#introduction-to-reproducibility",
+    "href": "index.html#introduction-to-reproducibility",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Introduction to reproducibility",
+    "text": "Introduction to reproducibility"
+  },
+  {
     "objectID": "index.html#overview",
     "href": "index.html#overview",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "Overview",
-    "text": "Overview\n\n47 articles reproduced (of 65 published) since journal’s inception in 2017\npapers reproduced in 2022: 13\npapers reproduced without any errors: 2 (with one being simulation study that required running code with fewer iterations)\nerrors in code: 8 (e.g., missing library calls, problems knitting reports, container-emulating packages, deprecated functions)\nerrors in reported results: 6 (e.g., wrong sample size, mean, plot output discrepancy, copy paste error, package update changed output)"
+    "text": "Overview\n\n47 articles reproduced (of 65 published) since journal’s inception in 2017\npapers reproduced in 2022: 13\n\npapers reproduced without any errors: 2 (with one being simulation study that required running code with fewer iterations)\nerrors in code: 8 (e.g., missing library calls, problems knitting reports, container-emulating packages, deprecated functions)\nerrors in reported results: 6 (e.g., wrong sample size, mean, plot output discrepancy, copy paste error, package update changed output)"
   },
   {
     "objectID": "index.html#reproducibility-checklist",
@@ -130,7 +137,7 @@
     "href": "index.html#containerization",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "Containerization",
-    "text": "Containerization\n\nDocker\nCodeocean or\nR packages (e.g., renv)"
+    "text": "Containerization\n\nDocker\nCodeocean\nR packages (e.g., renv)"
   },
   {
     "objectID": "index.html#task",
