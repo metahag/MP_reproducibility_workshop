@@ -21,3 +21,4 @@ Content covers the following topics:
 - https://quarto.org/
 - https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html
 - https://tysonbarrett.com/Rstats/chapter-9-reproducible-workflow-with-rmarkdown.html
+- Codeocean tutorial: https://open.lnu.se/index.php/metapsychology/article/view/892/
