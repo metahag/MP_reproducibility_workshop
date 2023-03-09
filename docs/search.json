@@ -14,6 +14,20 @@
     "text": "Quick overview of the exercise\n\ntry to reproduce code from a paper accepted for publication in MP\nnote down what’s causing troubles in reproducing the paper\nnote down what is correctly done\ncompare the results from the code output to reported results in the manuscript ## Introduction to reproducibility"
   },
   {
+    "objectID": "index.html#transparency-is-a-way-out-of-the-replication-crisis",
+    "href": "index.html#transparency-is-a-way-out-of-the-replication-crisis",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Transparency is a way out of the replication crisis",
+    "text": "Transparency is a way out of the replication crisis\n\nYet, transparency only allows assessing reliability of research findings\nMuch focus has been given to replication (i.e., same analysis on new data) or robustness (i.e., new analyses same data)\nLess attention to the most basic:\n\nkeeping data, analyses and reporting free from errors\n\nComputational reproducibility still rare"
+  },
+  {
+    "objectID": "index.html#meta-psychology",
+    "href": "index.html#meta-psychology",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Meta-Psychology",
+    "text": "Meta-Psychology\n\nMeta-Psychology pioneering in this area (#1 on TOP FACTOR)\nMeta-Psychology is a community run journal\nNo APC (Diamond OA)\nPublishes anything “meta” in psychology:\n\nreviews, meta-analyses, commentaries, replications.\n\nEducational psychology is, of course an important area\nThis talk is our 5 years experience with computational reproducibility at MP"
+  },
+  {
     "objectID": "index.html#overview",
     "href": "index.html#overview",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
@@ -67,7 +81,7 @@
     "href": "index.html#setting-seed-for-simulations",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "Setting Seed for Simulations",
-    "text": "Setting Seed for Simulations\n\nbootstrapping confidence intervals\nsimulating datasets\n\n\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1]  0.4469973 -0.1725702  0.4100802 -0.1675563 -0.3200588  1.0176700\n\n\n\nset.seed(1234)\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1] -1.2070657  0.2774292  1.0844412 -2.3456977  0.4291247  0.5060559"
+    "text": "Setting Seed for Simulations\n\nbootstrapping confidence intervals\nsimulating datasets\n\n\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1]  1.94882758 -0.27413020 -1.47013412  1.19288255 -0.06091793 -0.30970280\n\n\n\nset.seed(1234)\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1] -1.2070657  0.2774292  1.0844412 -2.3456977  0.4291247  0.5060559"
   },
   {
     "objectID": "index.html#wrong-rounding",

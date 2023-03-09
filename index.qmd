@@ -34,6 +34,24 @@ format:
 - compare the results from the code output to reported results in the manuscript
 ## Introduction to reproducibility
 
+## Transparency is a way out of the replication crisis
+- Yet, transparency only allows assessing reliability of research findings
+- Much focus has been given to replication (i.e., same analysis on new data) or robustness (i.e., new analyses same data)
+- Less attention to the most basic:
+    - keeping data, analyses and reporting free from errors
+- Computational reproducibility still rare
+
+## Meta-Psychology
+
+- Meta-Psychology pioneering in this area (#1 on TOP FACTOR)
+- Meta-Psychology is a community run journal
+- No APC (Diamond OA)
+- Publishes anything “meta” in psychology:
+    - reviews, meta-analyses, commentaries, replications.
+- Educational psychology is, of course an important area
+- This talk is our 5 years experience with computational reproducibility at MP
+
+
 # Computational Reproducibility Check 
 ## Overview {.smaller}
 - 47 articles reproduced since journal's inception in 2017
