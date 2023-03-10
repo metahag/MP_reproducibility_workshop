@@ -22,3 +22,9 @@ Content covers the following topics:
 - https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html
 - https://tysonbarrett.com/Rstats/chapter-9-reproducible-workflow-with-rmarkdown.html
 - Codeocean tutorial: https://open.lnu.se/index.php/metapsychology/article/view/892/
+
+## Get started with R and Jamovi
+Download R: https://www.r-project.org/
+Download RStudio: https://posit.co/downloads/
+RStudio Cloud: https://posit.cloud/
+Download Jamovi: https://www.jamovi.org/

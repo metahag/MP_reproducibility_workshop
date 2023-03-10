@@ -18,7 +18,7 @@
     "href": "index.html#transparency-is-a-way-out-of-the-replication-crisis",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "Transparency is a way out of the replication crisis",
-    "text": "Transparency is a way out of the replication crisis\n\nYet, transparency only allows assessing reliability of research findings\nMuch focus has been given to replication (i.e., same analysis on new data) or robustness (i.e., new analyses same data)\nLess attention to the most basic:\n\nkeeping data, analyses and reporting free from errors\n\nComputational reproducibility still rare"
+    "text": "Transparency is a way out of the replication crisis\n\nYet, transparency only allows assessing reliability of research findings\nMuch focus has been given to replication (i.e., same analysis on new data) or robustness (i.e., new analyses same data)\nLess attention to the most basic:\n\nkeeping data, analyses and reporting free from errors\n\nComputational reproducibility checks are still rare"
   },
   {
     "objectID": "index.html#meta-psychology",
@@ -81,21 +81,14 @@
     "href": "index.html#setting-seed-for-simulations",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "Setting Seed for Simulations",
-    "text": "Setting Seed for Simulations\n\nbootstrapping confidence intervals\nsimulating datasets\n\n\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1]  1.94882758 -0.27413020 -1.47013412  1.19288255 -0.06091793 -0.30970280\n\n\n\nset.seed(1234)\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1] -1.2070657  0.2774292  1.0844412 -2.3456977  0.4291247  0.5060559"
+    "text": "Setting Seed for Simulations\n\nbootstrapping confidence intervals\nsimulating datasets\n\n\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1]  0.9907170 -1.4588117 -1.0475432 -1.3362668 -0.9936143 -0.1442962\n\n\n\nset.seed(1234)\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1] -1.2070657  0.2774292  1.0844412 -2.3456977  0.4291247  0.5060559"
   },
   {
-    "objectID": "index.html#wrong-rounding",
-    "href": "index.html#wrong-rounding",
+    "objectID": "index.html#wrong-roundingcopy-paste-errors",
+    "href": "index.html#wrong-roundingcopy-paste-errors",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
-    "section": "Wrong Rounding",
-    "text": "Wrong Rounding\n\ndata <- iris\nmean(iris$Sepal.Width)\n\n[1] 3.057333\n\nround(mean(iris$Sepal.Width))\n\n[1] 3\n\nround(mean(iris$Sepal.Width), 2)\n\n[1] 3.06"
-  },
-  {
-    "objectID": "index.html#copy-paste-errors",
-    "href": "index.html#copy-paste-errors",
-    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
-    "section": "Copy-Paste Errors",
-    "text": "Copy-Paste Errors\n\ndata <- iris\n# Hard-coded result\ncat(\"The mean value is 5.\")\n\nThe mean value is 5.\n\n# Extracted from code\ncat(paste0(\"The mean value is \", round(mean(iris$Sepal.Length), 2), \".\"))\n\nThe mean value is 5.84.\n\n\n\ncompiling reports that contain the code and results in one document allows a simpler workflow and minimizes errors caused by copy-pasting\npapaja package in R"
+    "section": "Wrong Rounding/Copy-Paste Errors",
+    "text": "Wrong Rounding/Copy-Paste Errors\n\ndata <- iris\nmean(iris$Sepal.Width)\n\n[1] 3.057333\n\nround(mean(iris$Sepal.Width))\n\n[1] 3\n\nround(mean(iris$Sepal.Width), 2)\n\n[1] 3.06\n\n\n\ndata <- iris\n# Hard-coded result\ncat(\"The mean value is 5.\")\n\nThe mean value is 5.\n\n# Extracted from code\ncat(paste0(\"The mean value is \", round(mean(iris$Sepal.Length), 2), \".\"))\n\nThe mean value is 5.84."
   },
   {
     "objectID": "index.html#importance-of-structure",
@@ -112,6 +105,13 @@
     "text": "Best practices for file naming conventions\n\nconsistency: keep capitalization consistent, as well as use of punctuation, avoid special characters\nclarity: names should be descriptive and clear, even if it means it will be longer\nchronology: names should indicate the correct order of steps"
   },
   {
+    "objectID": "index.html#rmarkdownquarto",
+    "href": "index.html#rmarkdownquarto",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "RMarkdown/Quarto",
+    "text": "RMarkdown/Quarto\n\ncompiling reports that contain the code and results in one document allows a simpler workflow and minimizes errors caused by copy-pasting\npapaja package in R"
+  },
+  {
     "objectID": "index.html#readme-and-codebook-files",
     "href": "index.html#readme-and-codebook-files",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
@@ -126,11 +126,11 @@
     "text": "Containerization\n\nDocker\nCodeocean\nR packages (e.g., renv)"
   },
   {
-    "objectID": "index.html#gui-alternative",
-    "href": "index.html#gui-alternative",
+    "objectID": "index.html#point-and-click-alternative",
+    "href": "index.html#point-and-click-alternative",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
-    "section": "GUI alternative",
-    "text": "GUI alternative\n\nopen source: JASP or JAMOVI\njamovi files can be saved with analyses and edited data in a transparent way *Note: although .omv (jamovi) files include datasets, always provide raw .tsv/.csv files separately"
+    "section": "Point-and-click alternative",
+    "text": "Point-and-click alternative\n\nopen source: JASP or JAMOVI\njamovi files can be saved with analyses and edited data in a transparent way *Note: although .omv (jamovi) files include datasets, always provide raw .tsv/.csv files separately"
   },
   {
     "objectID": "index.html#task",

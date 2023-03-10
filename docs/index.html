@@ -416,7 +416,7 @@
 <ul>
 <li>keeping data, analyses and reporting free from errors</li>
 </ul></li>
-<li>Computational reproducibility still rare</li>
+<li>Computational reproducibility checks are still rare</li>
 </ul>
 </section>
 <section id="meta-psychology" class="slide level2">
@@ -564,7 +564,7 @@ Common reasons why a function may not run properly:
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">head</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  1.94882758 -0.27413020 -1.47013412  1.19288255 -0.06091793 -0.30970280</code></pre>
+<pre><code>[1]  0.9907170 -1.4588117 -1.0475432 -1.3362668 -0.9936143 -0.1442962</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -575,8 +575,8 @@ Common reasons why a function may not run properly:
 </div>
 </div>
 </section>
-<section id="wrong-rounding" class="slide level2">
-<h2>Wrong Rounding</h2>
+<section id="wrong-roundingcopy-paste-errors" class="slide level2">
+<h2>Wrong Rounding/Copy-Paste Errors</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>data <span class="ot">&lt;-</span> iris</span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="fu">mean</span>(iris<span class="sc">$</span>Sepal.Width)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -592,9 +592,6 @@ Common reasons why a function may not run properly:
 <pre><code>[1] 3.06</code></pre>
 </div>
 </div>
-</section>
-<section id="copy-paste-errors" class="slide level2">
-<h2>Copy-Paste Errors</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>data <span class="ot">&lt;-</span> iris</span>
 <span id="cb17-2"><a href="#cb17-2"></a><span class="co"># Hard-coded result</span></span>
@@ -608,18 +605,14 @@ Common reasons why a function may not run properly:
 <pre><code>The mean value is 5.84.</code></pre>
 </div>
 </div>
-<ul>
-<li>compiling reports that contain the code and results in one document allows a simpler workflow and minimizes errors caused by copy-pasting</li>
-<li><a href="https://cran.r-project.org/web/packages/papaja/index.html">papaja</a> package in R</li>
-</ul>
 <!-- Examples of how to do it properly starts here -->
 </section></section>
 <section>
-<section id="project-structure" class="title-slide slide level1 smaller center">
-<h1>Project structure</h1>
+<section id="best-practices" class="title-slide slide level1 center">
+<h1>Best practices</h1>
 
 </section>
-<section id="importance-of-structure" class="slide level2">
+<section id="importance-of-structure" class="slide level2 smaller">
 <h2>Importance of structure</h2>
 <ul>
 <li><a href="https://psych-ds.github.io/">Psych-DS</a></li>
@@ -660,6 +653,14 @@ Common reasons why a function may not run properly:
 <li>chronology: names should indicate the correct order of steps</li>
 </ul>
 </section>
+<section id="rmarkdownquarto" class="slide level2 smaller">
+<h2>RMarkdown/Quarto</h2>
+<ul>
+<li>compiling reports that contain the code and results in one document allows a simpler workflow and minimizes errors caused by copy-pasting</li>
+<li><a href="https://cran.r-project.org/web/packages/papaja/index.html">papaja</a> package in R</li>
+</ul>
+<p><img data-src="images/markdown_code.png"> <img data-src="images/markdown_output.png"></p>
+</section>
 <section id="readme-and-codebook-files" class="slide level2 smaller">
 <h2>README and codebook files</h2>
 <div class="columns">
@@ -695,8 +696,8 @@ Common reasons why a function may not run properly:
 <li>R packages (e.g., <a href="https://cran.r-project.org/web/packages/renv/index.html">renv</a>) <img data-src="images/codeocean.png" data-fig-align="center"></li>
 </ul>
 </section>
-<section id="gui-alternative" class="slide level2 smaller">
-<h2>GUI alternative</h2>
+<section id="point-and-click-alternative" class="slide level2 smaller">
+<h2>Point-and-click alternative</h2>
 <ul>
 <li>open source: <a href="https://jasp-stats.org/">JASP</a> or <a href="https://www.jamovi.org/">JAMOVI</a></li>
 <li>jamovi files can be saved with analyses and edited data in a transparent way *Note: although .omv (jamovi) files include datasets, always provide raw .tsv/.csv files separately <img data-src="images/jamovi-lr.png" data-fig-align="center"></li>

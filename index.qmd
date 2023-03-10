@@ -39,7 +39,7 @@ format:
 - Much focus has been given to replication (i.e., same analysis on new data) or robustness (i.e., new analyses same data)
 - Less attention to the most basic:
     - keeping data, analyses and reporting free from errors
-- Computational reproducibility still rare
+- Computational reproducibility checks are still rare
 
 ## Meta-Psychology
 
@@ -154,7 +154,7 @@ head(rnorm(100, mean = 0, sd = 1))
 ```
 
 
-## Wrong Rounding
+## Wrong Rounding/Copy-Paste Errors
 ```{r}
 #| echo = TRUE, eval = TRUE
 data <- iris
@@ -162,9 +162,6 @@ mean(iris$Sepal.Width)
 round(mean(iris$Sepal.Width))
 round(mean(iris$Sepal.Width), 2)
 ```
-
-
-## Copy-Paste Errors
 
 ```{r}
 #| echo = TRUE, eval = TRUE
@@ -177,13 +174,11 @@ cat(paste0("The mean value is ", round(mean(iris$Sepal.Length), 2), "."))
 
 ```
 
-- compiling reports that contain the code and results in one document allows a simpler workflow and minimizes errors caused by copy-pasting
-- [papaja](https://cran.r-project.org/web/packages/papaja/index.html) package in R
-
 <!-- Examples of how to do it properly starts here -->
 
-# Project structure {.smaller}
-## Importance of structure
+# Best practices 
+
+## Importance of structure {.smaller}
 - [Psych-DS](https://psych-ds.github.io/)
 - creating projects allows using relative paths 
 - projects can be easily sent to and managed by other people
@@ -220,6 +215,14 @@ my_project/
 - consistency: keep capitalization consistent, as well as use of punctuation, avoid special characters
 - clarity: names should be descriptive and clear, even if it means it will be longer
 - chronology: names should indicate the correct order of steps
+
+## RMarkdown/Quarto {.smaller}
+- compiling reports that contain the code and results in one document allows a simpler workflow and minimizes errors caused by copy-pasting
+- [papaja](https://cran.r-project.org/web/packages/papaja/index.html) package in R
+
+![](images/markdown_code.png){}
+![](images/markdown_output.png){}
+
 
 ## README and codebook files {.smaller}
 :::: {.columns}
@@ -261,7 +264,7 @@ Codebook
 - R packages (e.g., [renv](https://cran.r-project.org/web/packages/renv/index.html))
 ![](images/codeocean.png){fig-align="center"}
 
-## GUI alternative {.smaller}
+## Point-and-click alternative {.smaller}
 - open source: [JASP](https://jasp-stats.org/) or [JAMOVI](https://www.jamovi.org/)
 - jamovi files can be saved with analyses and edited data in a transparent way
 *Note: although .omv (jamovi) files include datasets, always provide raw .tsv/.csv files separately
