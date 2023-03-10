@@ -22,8 +22,8 @@ format:
 ## Agenda
  
 -   Meta-Psychology computational reproducibility assessment
--   Common Mistakes in Computational Reproducibility
--   Best Practices for Reproducible Analyses
+-   Common errors in computational reproducibility
+-   Best practices for reproducible rnalyses
 -   Exercise (1 hour)
 -   Discussion (15 min)
 
@@ -211,7 +211,7 @@ my_project/
 
 ```
 
-## Best practices for file naming conventions
+## File naming conventions
 - consistency: keep capitalization consistent, as well as use of punctuation, avoid special characters
 - clarity: names should be descriptive and clear, even if it means it will be longer
 - chronology: names should indicate the correct order of steps
