@@ -7,10 +7,10 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.38">
+  <meta name="generator" content="quarto-1.2.335">
 
-  <meta name="author" content="Lucija Batinovic &amp; Rickard Carlsson Meta-Psychology March 10, 2023">
-  <title>Why your code doesn’t reproduce: Lessons learned from Meta-Psychology</title>
+  <meta name="author" content="Lucija Batinovic &amp; Rickard Carlsson Meta-Psychology June 23, 2023">
+  <title>MP_Repro_workshop - Why your code doesn’t reproduce: Lessons learned from Meta-Psychology</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -19,10 +19,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -385,9 +390,8 @@
 
 <section id="title-slide" data-background-image="images/logo.png" data-background-position="1.5% 1.5%" data-background-size="17%" class="center">
   <h1 class="title">Why your code doesn’t reproduce: Lessons learned from Meta-Psychology</h1>
-  <p class="author">Lucija Batinovic &amp; Rickard Carlsson<br>Meta-Psychology<br>March 10, 2023</p>
+  <p class="author">Lucija Batinovic &amp; Rickard Carlsson<br>Meta-Psychology<br>June 23, 2023</p>
 </section>
-
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
@@ -404,8 +408,13 @@
 <li>try to reproduce code from a paper accepted for publication in MP</li>
 <li>note down what’s causing troubles in reproducing the paper</li>
 <li>note down what is correctly done</li>
-<li>compare the results from the code output to reported results in the manuscript ## Introduction to reproducibility</li>
+<li>compare the results from the code output to reported results in the manuscript</li>
 </ul>
+</section>
+<section>
+<section id="introduction-to-reproducibility" class="title-slide slide level1 center">
+<h1>Introduction to reproducibility</h1>
+
 </section>
 <section id="transparency-is-a-way-out-of-the-replication-crisis" class="slide level2">
 <h2>Transparency is a way out of the replication crisis</h2>
@@ -432,7 +441,7 @@
 <li>Educational psychology is, of course an important area</li>
 <li>This talk is our 5 years experience with computational reproducibility at MP</li>
 </ul>
-</section>
+</section></section>
 <section>
 <section id="computational-reproducibility-check" class="title-slide slide level1 center">
 <h1>Computational Reproducibility Check</h1>
@@ -564,7 +573,7 @@ Common reasons why a function may not run properly:
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">head</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.6012927 -0.2283838  1.1665396 -0.9684096 -1.1654360 -0.4124760</code></pre>
+<pre><code>[1] 0.00221049 0.37273114 0.41233889 0.12024461 2.34815103 0.05332354</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -678,12 +687,15 @@ Common reasons why a function may not run properly:
 </div><div class="column" style="width:50%;">
 <div class="fragment">
 <p>Codebook</p>
-<div>
 <ul>
-<li class="fragment">Overview of all variables: name and description of each variable</li>
-<li class="fragment">Description</li>
+<li>Overview of all variables: name and description of each variable</li>
+<li><a href="https://cran.r-project.org/web/packages/codebook/index.html">codebook</a></li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">library</span>(codebook)</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="fu">new_codebook_rmd</span>(codebook)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><img data-src="images/codebook.png"></p>
 </div>
 </div>
 </div>
@@ -712,6 +724,7 @@ Common reasons why a function may not run properly:
 <h2>Task</h2>
 <ul>
 <li>try to reproduce code from a paper accepted for publication in MP</li>
+<li>try to reproduce code from one of the participants’ projects</li>
 <li>note down what’s causing troubles in reproducing the paper (if anything)</li>
 <li>note down what is correctly done</li>
 <li>compare the results from the code output to reported results in the manuscript</li>
@@ -938,12 +951,15 @@ Common reasons why a function may not run properly:
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
       (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
           const event = window.document.createEvent("Event");
           event.initEvent("slideenter", true, true);
           window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
 
           // dispatch for shiny
           if (window.jQuery) {
@@ -954,13 +970,6 @@ Common reasons why a function may not run properly:
               window.jQuery(currentSlide).trigger("shown");
             }
           }
-        }
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
         }
 
         // hookup for slidy
@@ -1012,7 +1021,24 @@ Common reasons why a function may not run properly:
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -1042,31 +1068,50 @@ Common reasons why a function may not run properly:
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          let href = ref.getAttribute('href');
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>

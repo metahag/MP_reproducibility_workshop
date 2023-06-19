@@ -1,7 +1,7 @@
 ---
 title: "Why your code doesn't reproduce: Lessons learned from Meta-Psychology"
 title-slide-style: pandoc
-author: "Lucija Batinovic & Rickard Carlsson<br>Meta-Psychology<br>March 10, 2023"
+author: "Lucija Batinovic & Rickard Carlsson<br>Meta-Psychology<br>June 23, 2023"
 format:
   revealjs:
     slide-number: c/t
@@ -32,7 +32,8 @@ format:
 - note down what's causing troubles in reproducing the paper
 - note down what is correctly done
 - compare the results from the code output to reported results in the manuscript
-## Introduction to reproducibility
+
+# Introduction to reproducibility
 
 ## Transparency is a way out of the replication crisis
 - Yet, transparency only allows assessing reliability of research findings
@@ -247,10 +248,15 @@ README
 
 Codebook
 
-::: {.incremental}
 - Overview of all variables: name and description of each variable
-- Description
-:::
+- [codebook](https://cran.r-project.org/web/packages/codebook/index.html)
+
+```{r}
+library(codebook)
+new_codebook_rmd(codebook)
+```
+
+![](images/codebook.png){}
 
 :::
 
@@ -275,7 +281,8 @@ Codebook
 # Practice
 
 ## Task
-- try to reproduce code from a paper accepted for publication in MP
+- try to reproduce code from a paper accepted for publication in MP 
+- try to reproduce code from one of the participants' projects
 - note down what's causing troubles in reproducing the paper (if anything)
 - note down what is correctly done
 - compare the results from the code output to reported results in the manuscript

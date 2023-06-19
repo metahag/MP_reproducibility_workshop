@@ -1,0 +1,3727 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>MP_Repro_workshop - Codebook</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="site_libs/datatables-binding-0.24/datatables.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="site_libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="site_libs/jszip-1.11.3/jszip.min.js"></script>
+<script src="site_libs/pdfmake-1.11.3/pdfmake.js"></script>
+<script src="site_libs/pdfmake-1.11.3/vfs_fonts.js"></script>
+<link href="site_libs/dt-ext-buttons-1.11.3/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="site_libs/dt-ext-buttons-1.11.3/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.11.3/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.11.3/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.11.3/js/buttons.print.min.js"></script>
+<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet">
+<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet">
+<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Codebook</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Here, we’re just setting a few options.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">warning =</span> <span class="cn">TRUE</span>, <span class="co"># show warnings during codebook generation</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">TRUE</span>, <span class="co"># show messages during codebook generation</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">error =</span> <span class="cn">TRUE</span>, <span class="co"># do not interrupt codebook generation in case of errors,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                <span class="co"># usually better for debugging</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span>  <span class="co"># show R code</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, we’re preparing our data for the codebook.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(codebook)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>codebook_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"/Users/lucijabatinovic/Desktop/dataFL_edit.csv"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># omit the following lines, if your missing values are already properly labelled</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>codebook_data <span class="ot">&lt;-</span> <span class="fu">detect_missing</span>(codebook_data,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">only_labelled =</span> <span class="cn">TRUE</span>, <span class="co"># only labelled values are autodetected as</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                                   <span class="co"># missing</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">negative_values_are_missing =</span> <span class="cn">FALSE</span>, <span class="co"># negative values are missing values</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">ninety_nine_problems =</span> <span class="cn">TRUE</span>,   <span class="co"># 99/999 are missing values, if they</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                                   <span class="co"># are more than 5 MAD from the median</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># If you are not using formr, the codebook package needs to guess which items</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># form a scale. The following line finds item aggregates with names like this:</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># scale = scale_1 + scale_2R + scale_3R</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># identifying these aggregates allows the codebook function to</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># automatically compute reliabilities.</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># However, it will not reverse items automatically.</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>codebook_data <span class="ot">&lt;-</span> <span class="fu">detect_scales</span>(codebook_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in detect_scales(codebook_data): gender items found, but no aggregate</code></pre>
+</div>
+</div>
+<p>Create codebook</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">codebook</span>(codebook_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="cell">
+
+</div>
+<section id="metadata" class="level3">
+<h3 class="anchored" data-anchor-id="metadata">Metadata</h3>
+<section id="description" class="level4">
+<h4 class="anchored" data-anchor-id="description">Description</h4>
+<p><strong>Dataset name</strong>: codebook_data</p>
+<p>The dataset has N=108 rows and 39 columns. 0 rows have no missing values on any column.</p>
+<details>
+<summary title="Expand this section to see some additional metadata in a structured format that is useful for search engines">
+Metadata for search engines
+</summary>
+<ul>
+<li><strong>Date published</strong>: 2023-06-19</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="kable_wrapper">
+<tbody>
+<tr>
+<td>
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">x</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">unique_row</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">study_id</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">long_cite</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">short_cite</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">experiment_number</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">effect_size_number</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">peer_reviewed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">country</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mean_age</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grade</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sample_size</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">gender_1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gender_2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">study_design</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">participant_design</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">implementation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">duration_week</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">frequency_n</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">intensity_n</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">m1i</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sd1i</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">n1i</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">m2i</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sd2i</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">n2i</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ai</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bi</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ci</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">di</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ri</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ni</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">t</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">f_stat</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">d</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">d_var</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rob</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">robins</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">outcome</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">outcome_full</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+
+</table>
+</div>
+</div>
+</details>
+</section>
+</section>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+</div>
+</div>
+<p>#Variables</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="cell">
+
+</div>
+<section id="unique_row" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="unique_row">unique_row</h3>
+<section id="unique_row_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="unique_row_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="unique_row_summary" class="level4">
+<h4 class="anchored" data-anchor-id="unique_row_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">unique_row</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="study_id" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="study_id">study_id</h3>
+<section id="study_id_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="study_id_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_study_id_distribution-15-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for study_id</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="study_id_summary" class="level4">
+<h4 class="anchored" data-anchor-id="study_id_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 13%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">whitespace</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">study_id</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="long_cite" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="long_cite">long_cite</h3>
+<section id="long_cite_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="long_cite_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="long_cite_summary" class="level4">
+<h4 class="anchored" data-anchor-id="long_cite_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">long_cite</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="short_cite" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="short_cite">short_cite</h3>
+<section id="short_cite_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="short_cite_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_short_cite_distribution-29-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for short_cite</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="short_cite_summary" class="level4">
+<h4 class="anchored" data-anchor-id="short_cite_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 12%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">whitespace</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">short_cite</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="experiment_number" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="experiment_number">experiment_number</h3>
+<section id="experiment_number_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="experiment_number_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_experiment_number_distribution-36-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for experiment_number</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="experiment_number_summary" class="level4">
+<h4 class="anchored" data-anchor-id="experiment_number_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 5%">
+<col style="width: 3%">
+<col style="width: 6%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: left;">hist</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">experiment_number</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">▁▁▇▁▁</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="effect_size_number" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="effect_size_number">effect_size_number</h3>
+<section id="effect_size_number_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="effect_size_number_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_effect_size_number_distribution-43-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for effect_size_number</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="effect_size_number_summary" class="level4">
+<h4 class="anchored" data-anchor-id="effect_size_number_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 14%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 6%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: left;">hist</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">effect_size_number</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: right;">5.453704</td>
+<td style="text-align: right;">4.232461</td>
+<td style="text-align: left;">▇▅▂▁▁</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="peer_reviewed" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="peer_reviewed">peer_reviewed</h3>
+<section id="peer_reviewed_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="peer_reviewed_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_peer_reviewed_distribution-50-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for peer_reviewed</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="peer_reviewed_summary" class="level4">
+<h4 class="anchored" data-anchor-id="peer_reviewed_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 10%">
+<col style="width: 6%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 12%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">whitespace</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">peer_reviewed</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="country" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="country">country</h3>
+<section id="country_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="country_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_country_distribution-57-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for country</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>11 missing values.</p>
+</section>
+<section id="country_summary" class="level4">
+<h4 class="anchored" data-anchor-id="country_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 13%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">whitespace</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">country</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.8981481</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">11</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="mean_age" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="mean_age">mean_age</h3>
+<section id="mean_age_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="mean_age_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_mean_age_distribution-64-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for mean_age</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>14 missing values.</p>
+</section>
+<section id="mean_age_summary" class="level4">
+<h4 class="anchored" data-anchor-id="mean_age_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: left;">hist</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">mean_age</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.8703704</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">17</td>
+<td style="text-align: right;">12.855</td>
+<td style="text-align: right;">2.45896</td>
+<td style="text-align: left;">▂▂▇▂▂</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="grade" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="grade">grade</h3>
+<section id="grade_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="grade_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_grade_distribution-71-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for grade</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>41 missing values.</p>
+</section>
+<section id="grade_summary" class="level4">
+<h4 class="anchored" data-anchor-id="grade_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 11%">
+<col style="width: 7%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 13%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">whitespace</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">grade</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">0.6203704</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">11</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="sample_size" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="sample_size">sample_size</h3>
+<section id="sample_size_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="sample_size_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_sample_size_distribution-78-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for sample_size</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="sample_size_summary" class="level4">
+<h4 class="anchored" data-anchor-id="sample_size_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 6%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: left;">hist</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">sample_size</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">46</td>
+<td style="text-align: left;">126</td>
+<td style="text-align: right;">55.71296</td>
+<td style="text-align: right;">24.89757</td>
+<td style="text-align: left;">▇▃▁▃▁</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="gender_1" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="gender_1">gender_1</h3>
+<section id="gender_1_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="gender_1_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_gender_1_distribution-85-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for gender_1</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>53 missing values.</p>
+</section>
+<section id="gender_1_summary" class="level4">
+<h4 class="anchored" data-anchor-id="gender_1_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 6%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: left;">hist</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">gender_1</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">0.5092593</td>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">40</td>
+<td style="text-align: left;">56</td>
+<td style="text-align: right;">36.05455</td>
+<td style="text-align: right;">13.94489</td>
+<td style="text-align: left;">▃▃▂▇▃</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="gender_2" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="gender_2">gender_2</h3>
+<section id="gender_2_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="gender_2_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_gender_2_distribution-92-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for gender_2</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>53 missing values.</p>
+</section>
+<section id="gender_2_summary" class="level4">
+<h4 class="anchored" data-anchor-id="gender_2_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 6%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: left;">hist</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">gender_2</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">0.5092593</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">52</td>
+<td style="text-align: right;">25.23636</td>
+<td style="text-align: right;">15.49548</td>
+<td style="text-align: left;">▇▅▂▃▂</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="study_design" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="study_design">study_design</h3>
+<section id="study_design_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="study_design_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_study_design_distribution-99-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for study_design</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="study_design_summary" class="level4">
+<h4 class="anchored" data-anchor-id="study_design_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 10%">
+<col style="width: 6%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 12%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">whitespace</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">study_design</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="participant_design" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="participant_design">participant_design</h3>
+<section id="participant_design_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="participant_design_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_participant_design_distribution-106-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for participant_design</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="participant_design_summary" class="level4">
+<h4 class="anchored" data-anchor-id="participant_design_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 9%">
+<col style="width: 6%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 11%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">whitespace</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">participant_design</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="implementation" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="implementation">implementation</h3>
+<section id="implementation_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="implementation_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="implementation_summary" class="level4">
+<h4 class="anchored" data-anchor-id="implementation_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">implementation</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="duration_week" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="duration_week">duration_week</h3>
+<section id="duration_week_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="duration_week_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="duration_week_summary" class="level4">
+<h4 class="anchored" data-anchor-id="duration_week_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">duration_week</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="frequency_n" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="frequency_n">frequency_n</h3>
+<section id="frequency_n_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="frequency_n_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="frequency_n_summary" class="level4">
+<h4 class="anchored" data-anchor-id="frequency_n_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">frequency_n</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="intensity_n" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="intensity_n">intensity_n</h3>
+<section id="intensity_n_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="intensity_n_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="intensity_n_summary" class="level4">
+<h4 class="anchored" data-anchor-id="intensity_n_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">intensity_n</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="m1i" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="m1i">m1i</h3>
+<section id="m1i_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="m1i_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_m1i_distribution-141-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for m1i</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="m1i_summary" class="level4">
+<h4 class="anchored" data-anchor-id="m1i_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: left;">hist</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">m1i</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">0.76</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">99</td>
+<td style="text-align: right;">30.05083</td>
+<td style="text-align: right;">29.8282</td>
+<td style="text-align: left;">▇▂▂▁▂</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="sd1i" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="sd1i">sd1i</h3>
+<section id="sd1i_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="sd1i_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_sd1i_distribution-148-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for sd1i</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="sd1i_summary" class="level4">
+<h4 class="anchored" data-anchor-id="sd1i_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: left;">hist</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">sd1i</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">0.18</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">34</td>
+<td style="text-align: right;">6.066944</td>
+<td style="text-align: right;">6.046187</td>
+<td style="text-align: left;">▇▂▁▁▁</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="n1i" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="n1i">n1i</h3>
+<section id="n1i_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="n1i_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_n1i_distribution-155-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for n1i</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="n1i_summary" class="level4">
+<h4 class="anchored" data-anchor-id="n1i_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: left;">hist</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">n1i</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">51</td>
+<td style="text-align: right;">23.87037</td>
+<td style="text-align: right;">9.929746</td>
+<td style="text-align: left;">▇▅▁▁▂</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="m2i" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="m2i">m2i</h3>
+<section id="m2i_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="m2i_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_m2i_distribution-162-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for m2i</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="m2i_summary" class="level4">
+<h4 class="anchored" data-anchor-id="m2i_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: left;">hist</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">m2i</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">0.31</td>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">140</td>
+<td style="text-align: right;">36.08685</td>
+<td style="text-align: right;">34.38808</td>
+<td style="text-align: left;">▇▂▂▂▁</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="sd2i" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="sd2i">sd2i</h3>
+<section id="sd2i_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="sd2i_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_sd2i_distribution-169-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for sd2i</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="sd2i_summary" class="level4">
+<h4 class="anchored" data-anchor-id="sd2i_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 7%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: left;">hist</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">sd2i</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">0.001</td>
+<td style="text-align: left;">3.1</td>
+<td style="text-align: left;">33</td>
+<td style="text-align: right;">5.129732</td>
+<td style="text-align: right;">5.49925</td>
+<td style="text-align: left;">▇▂▁▁▁</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="n2i" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="n2i">n2i</h3>
+<section id="n2i_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="n2i_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_n2i_distribution-176-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for n2i</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="n2i_summary" class="level4">
+<h4 class="anchored" data-anchor-id="n2i_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: left;">hist</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">n2i</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">84</td>
+<td style="text-align: right;">31.84259</td>
+<td style="text-align: right;">19.49175</td>
+<td style="text-align: left;">▇▂▁▁▂</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="ai" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="ai">ai</h3>
+<section id="ai_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="ai_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="ai_summary" class="level4">
+<h4 class="anchored" data-anchor-id="ai_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ai</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="bi" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="bi">bi</h3>
+<section id="bi_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="bi_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="bi_summary" class="level4">
+<h4 class="anchored" data-anchor-id="bi_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">bi</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="ci" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="ci">ci</h3>
+<section id="ci_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="ci_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="ci_summary" class="level4">
+<h4 class="anchored" data-anchor-id="ci_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ci</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="di" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="di">di</h3>
+<section id="di_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="di_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="di_summary" class="level4">
+<h4 class="anchored" data-anchor-id="di_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">di</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="ri" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="ri">ri</h3>
+<section id="ri_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="ri_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="ri_summary" class="level4">
+<h4 class="anchored" data-anchor-id="ri_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ri</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="ni" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="ni">ni</h3>
+<section id="ni_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="ni_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="ni_summary" class="level4">
+<h4 class="anchored" data-anchor-id="ni_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ni</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="t" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="t">t</h3>
+<section id="t_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="t_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="t_summary" class="level4">
+<h4 class="anchored" data-anchor-id="t_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">t</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="f_stat" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="f_stat">f_stat</h3>
+<section id="f_stat_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="f_stat_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="f_stat_summary" class="level4">
+<h4 class="anchored" data-anchor-id="f_stat_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">f_stat</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="d" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="d">d</h3>
+<section id="d_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="d_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="d_summary" class="level4">
+<h4 class="anchored" data-anchor-id="d_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">d</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="d_var" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="d_var">d_var</h3>
+<section id="d_var_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="d_var_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="d_var_summary" class="level4">
+<h4 class="anchored" data-anchor-id="d_var_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">d_var</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="rob" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="rob">rob</h3>
+<section id="rob_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="rob_distribution">Distribution</h4>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in if (stats::median(table(x)) == 1) {: missing value where TRUE/FALSE needed</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No non-missing values to show.</code></pre>
+</div>
+</div>
+<p>108 missing values.</p>
+</section>
+<section id="rob_summary" class="level4">
+<h4 class="anchored" data-anchor-id="rob_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">count</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">rob</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="robins" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="robins">robins</h3>
+<section id="robins_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="robins_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_robins_distribution-260-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for robins</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="robins_summary" class="level4">
+<h4 class="anchored" data-anchor-id="robins_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 11%">
+<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 13%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">whitespace</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">robins</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="outcome" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="outcome">outcome</h3>
+<section id="outcome_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="outcome_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_outcome_distribution-267-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for outcome</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="outcome_summary" class="level4">
+<h4 class="anchored" data-anchor-id="outcome_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 13%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">whitespace</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">outcome</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="outcome_full" class="level3 tabset">
+<h3 class="tabset anchored" data-anchor-id="outcome_full">outcome_full</h3>
+<section id="outcome_full_distribution" class="level4">
+<h4 class="anchored" data-anchor-id="outcome_full_distribution">Distribution</h4>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="codebook_files/figure-html/cb_codebook_data_outcome_full_distribution-274-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Distribution of values for outcome_full</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>0 missing values.</p>
+</section>
+<section id="outcome_full_summary" class="level4">
+<h4 class="anchored" data-anchor-id="outcome_full_summary">Summary statistics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 10%">
+<col style="width: 6%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 12%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">data_type</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: right;">whitespace</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">outcome_full</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">22</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="cell">
+
+</div>
+<section id="missingness-report" class="level2">
+<h2 class="anchored" data-anchor-id="missingness-report">Missingness report</h2>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["description"],"name":[1],"type":["chr"],"align":["left"]},{"label":["country"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["mean_age"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["grade"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["gender_1"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["gender_2"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["unique_row"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["long_cite"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["implementation"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["duration_week"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["frequency_n"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["intensity_n"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["ai"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["bi"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["ci"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["di"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["ri"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["ni"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["t"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["f_stat"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["d"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["d_var"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["rob"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["var_miss"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["n_miss"],"name":[25],"type":["dbl"],"align":["right"]}],"data":[{"1":"Missing values per variable","2":"11","3":"14","4":"41","5":"53","6":"53","7":"108","8":"108","9":"108","10":"108","11":"108","12":"108","13":"108","14":"108","15":"108","16":"108","17":"108","18":"108","19":"108","20":"108","21":"108","22":"108","23":"108","24":"2008","25":"2008"},{"1":"Missing values in 19 variables","2":"1","3":"1","4":"1","5":"0","6":"0","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"0","24":"19","25":"39"},{"1":"Missing values in 17 variables","2":"1","3":"1","4":"1","5":"1","6":"1","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"0","24":"17","25":"28"},{"1":"Missing values in 18 variables","2":"1","3":"1","4":"0","5":"1","6":"1","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"0","24":"18","25":"27"},{"1":"Missing values in 22 variables","2":"0","3":"0","4":"0","5":"0","6":"0","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"0","24":"22","25":"11"},{"1":"Missing values in 21 variables","2":"1","3":"0","4":"0","5":"0","6":"0","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"0","24":"21","25":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="cell">
+
+</div>
+<section id="codebook-table" class="level2">
+<h2 class="anchored" data-anchor-id="codebook-table">Codebook table</h2>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="htmlwidget-3fd8eefe686b124dfb2f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3fd8eefe686b124dfb2f">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0\" data-max=\"108\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0\" data-max=\"1\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"1\" data-max=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\" disabled=\"\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0\" data-max=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"1\" data-max=\"55.712962962963\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0\" data-max=\"34.3880761949409\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\" disabled=\"\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0\" data-max=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\" disabled=\"\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"data":[["<a href=\"#unique_row\">unique_row<\/a>","<a href=\"#study_id\">study_id<\/a>","<a href=\"#long_cite\">long_cite<\/a>","<a href=\"#short_cite\">short_cite<\/a>","<a href=\"#experiment_number\">experiment_number<\/a>","<a href=\"#effect_size_number\">effect_size_number<\/a>","<a href=\"#peer_reviewed\">peer_reviewed<\/a>","<a href=\"#country\">country<\/a>","<a href=\"#mean_age\">mean_age<\/a>","<a href=\"#grade\">grade<\/a>","<a href=\"#sample_size\">sample_size<\/a>","<a href=\"#gender_1\">gender_1<\/a>","<a href=\"#gender_2\">gender_2<\/a>","<a href=\"#study_design\">study_design<\/a>","<a href=\"#participant_design\">participant_design<\/a>","<a href=\"#implementation\">implementation<\/a>","<a href=\"#duration_week\">duration_week<\/a>","<a href=\"#frequency_n\">frequency_n<\/a>","<a href=\"#intensity_n\">intensity_n<\/a>","<a href=\"#m1i\">m1i<\/a>","<a href=\"#sd1i\">sd1i<\/a>","<a href=\"#n1i\">n1i<\/a>","<a href=\"#m2i\">m2i<\/a>","<a href=\"#sd2i\">sd2i<\/a>","<a href=\"#n2i\">n2i<\/a>","<a href=\"#ai\">ai<\/a>","<a href=\"#bi\">bi<\/a>","<a href=\"#ci\">ci<\/a>","<a href=\"#di\">di<\/a>","<a href=\"#ri\">ri<\/a>","<a href=\"#ni\">ni<\/a>","<a href=\"#t\">t<\/a>","<a href=\"#f_stat\">f_stat<\/a>","<a href=\"#d\">d<\/a>","<a href=\"#d_var\">d_var<\/a>","<a href=\"#rob\">rob<\/a>","<a href=\"#robins\">robins<\/a>","<a href=\"#outcome\">outcome<\/a>","<a href=\"#outcome_full\">outcome_full<\/a>"],["logical","character","logical","character","numeric","numeric","character","character","numeric","character","numeric","numeric","numeric","character","character","logical","logical","logical","logical","numeric","numeric","numeric","numeric","numeric","numeric","logical","logical","logical","logical","logical","logical","logical","logical","logical","logical","logical","character","character","character"],[108,0,108,0,0,0,0,11,14,41,0,53,53,0,0,108,108,108,108,0,0,0,0,0,0,108,108,108,108,108,108,108,108,108,108,108,0,0,0],[0,1,0,1,1,1,1,0.898148148148148,0.87037037037037,0.62037037037037,1,0.509259259259259,0.509259259259259,1,1,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1],[null,15,null,15,null,null,1,5,null,8,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,13,14],[null,0,null,0,null,null,0,0,null,0,null,null,null,0,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,0,0],[": ",null,": ",null,null,null,null,null,null,null,null,null,null,null,null,": ",": ",": ",": ",null,null,null,null,null,null,": ",": ",": ",": ",": ",": ",": ",": ",": ",": ",": ",null,null,null],[null,"13",null,"13"," 1.000"," 1.000","3","5"," 8.000","1","26.000","14.000"," 8.000","18","7",null,null,null,null," 0.760"," 0.180","13.000"," 0.310"," 0.001","13.000",null,null,null,null,null,null,null,null,null,null,null,"8","2","3"],[null,null,null,null," 1.0"," 4.0",null,null,"13.0",null,"46.0","40.0","20.0",null,null,null,null,null,null,"18.1"," 4.0","20.0","22.3"," 3.1","25.0",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,"30",null,"30","  1"," 20","3","11"," 17","11","126"," 56"," 52","18","7",null,null,null,null," 99"," 34"," 51","140"," 33"," 84",null,null,null,null,null,null,null,null,null,null,null,"8","12","22"],[null,null,null,null,1,5.4537037037037,null,null,12.855,null,55.712962962963,36.0545454545455,25.2363636363636,null,null,null,null,null,null,30.0508333333333,6.06694444444444,23.8703703703704,36.0868518518519,5.12973148148148,31.8425925925926,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,0,4.23246080574123,null,null,2.45895980718135,null,24.8975661933803,13.944889123257,15.4954756077303,null,null,null,null,null,null,29.8282033673082,6.04618740737574,9.92974629805751,34.3880761949409,5.49924976464544,19.4917485714988,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,0,null,0,null,null,0,0,null,0,null,null,null,0,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,0,0],[null,null,null,null,"▁▁▇▁▁","▇▅▂▁▁",null,null,"▂▂▇▂▂",null,"▇▃▁▃▁","▃▃▂▇▃","▇▅▂▃▂",null,null,null,null,null,null,"▇▂▂▁▂","▇▂▁▁▁","▇▅▁▁▂","▇▂▂▂▁","▇▂▁▁▁","▇▂▁▁▂",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>name<\/th>\n      <th>data_type<\/th>\n      <th>n_missing<\/th>\n      <th>complete_rate<\/th>\n      <th>n_unique<\/th>\n      <th>empty<\/th>\n      <th>count<\/th>\n      <th>min<\/th>\n      <th>median<\/th>\n      <th>max<\/th>\n      <th>mean<\/th>\n      <th>sd<\/th>\n      <th>whitespace<\/th>\n      <th>hist<\/th>\n      <th>label<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","buttons":["copy","csv","excel","pdf","print"],"pageLength":200,"columnDefs":[{"className":"dt-right","targets":[2,3,4,5,10,11,12]}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[10,25,50,100,200]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="cell">
+
+</div>
+
+<script type="application/ld+json">
+{
+  "name": "codebook_data",
+  "datePublished": "2023-06-19",
+  "description": "The dataset has N=108 rows and 39 columns.\n0 rows have no missing values on any column.\n\n\n## Table of variables\nThis table contains variable names, labels, and number of missing values.\nSee the complete codebook for more.\n\n|name               |label | n_missing|\n|:------------------|:-----|---------:|\n|unique_row         |NA    |       108|\n|study_id           |NA    |         0|\n|long_cite          |NA    |       108|\n|short_cite         |NA    |         0|\n|experiment_number  |NA    |         0|\n|effect_size_number |NA    |         0|\n|peer_reviewed      |NA    |         0|\n|country            |NA    |        11|\n|mean_age           |NA    |        14|\n|grade              |NA    |        41|\n|sample_size        |NA    |         0|\n|gender_1           |NA    |        53|\n|gender_2           |NA    |        53|\n|study_design       |NA    |         0|\n|participant_design |NA    |         0|\n|implementation     |NA    |       108|\n|duration_week      |NA    |       108|\n|frequency_n        |NA    |       108|\n|intensity_n        |NA    |       108|\n|m1i                |NA    |         0|\n|sd1i               |NA    |         0|\n|n1i                |NA    |         0|\n|m2i                |NA    |         0|\n|sd2i               |NA    |         0|\n|n2i                |NA    |         0|\n|ai                 |NA    |       108|\n|bi                 |NA    |       108|\n|ci                 |NA    |       108|\n|di                 |NA    |       108|\n|ri                 |NA    |       108|\n|ni                 |NA    |       108|\n|t                  |NA    |       108|\n|f_stat             |NA    |       108|\n|d                  |NA    |       108|\n|d_var              |NA    |       108|\n|rob                |NA    |       108|\n|robins             |NA    |         0|\n|outcome            |NA    |         0|\n|outcome_full       |NA    |         0|\n\n### Note\nThis dataset was automatically described using the [codebook R package](https://rubenarslan.github.io/codebook/) (version 0.9.2).",
+  "keywords": ["unique_row", "study_id", "long_cite", "short_cite", "experiment_number", "effect_size_number", "peer_reviewed", "country", "mean_age", "grade", "sample_size", "gender_1", "gender_2", "study_design", "participant_design", "implementation", "duration_week", "frequency_n", "intensity_n", "m1i", "sd1i", "n1i", "m2i", "sd2i", "n2i", "ai", "bi", "ci", "di", "ri", "ni", "t", "f_stat", "d", "d_var", "rob", "robins", "outcome", "outcome_full"],
+  "@context": "http://schema.org/",
+  "@type": "Dataset",
+  "variableMeasured": [
+    {
+      "name": "unique_row",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "study_id",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "long_cite",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "short_cite",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "experiment_number",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "effect_size_number",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "peer_reviewed",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "country",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "mean_age",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "grade",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "sample_size",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "gender_1",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "gender_2",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "study_design",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "participant_design",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "implementation",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "duration_week",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "frequency_n",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "intensity_n",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "m1i",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "sd1i",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "n1i",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "m2i",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "sd2i",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "n2i",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "ai",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "bi",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "ci",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "di",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "ri",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "ni",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "t",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "f_stat",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "d",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "d_var",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "rob",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "robins",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "outcome",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "outcome_full",
+      "@type": "propertyValue"
+    }
+  ]
+}
+</script>
+<details>
+<summary>
+JSON-LD metadata
+</summary>
+<p>The following JSON-LD can be found by search engines, if you share this codebook publicly on the web.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"codebook_data"</span><span class="fu">,</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"datePublished"</span><span class="fu">:</span> <span class="st">"2023-06-19"</span><span class="fu">,</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"The dataset has N=108 rows and 39 columns.</span><span class="ch">\n</span><span class="st">0 rows have no missing values on any column.</span><span class="ch">\n\n\n</span><span class="st">## Table of variables</span><span class="ch">\n</span><span class="st">This table contains variable names, labels, and number of missing values.</span><span class="ch">\n</span><span class="st">See the complete codebook for more.</span><span class="ch">\n\n</span><span class="st">|name               |label | n_missing|</span><span class="ch">\n</span><span class="st">|:------------------|:-----|---------:|</span><span class="ch">\n</span><span class="st">|unique_row         |NA    |       108|</span><span class="ch">\n</span><span class="st">|study_id           |NA    |         0|</span><span class="ch">\n</span><span class="st">|long_cite          |NA    |       108|</span><span class="ch">\n</span><span class="st">|short_cite         |NA    |         0|</span><span class="ch">\n</span><span class="st">|experiment_number  |NA    |         0|</span><span class="ch">\n</span><span class="st">|effect_size_number |NA    |         0|</span><span class="ch">\n</span><span class="st">|peer_reviewed      |NA    |         0|</span><span class="ch">\n</span><span class="st">|country            |NA    |        11|</span><span class="ch">\n</span><span class="st">|mean_age           |NA    |        14|</span><span class="ch">\n</span><span class="st">|grade              |NA    |        41|</span><span class="ch">\n</span><span class="st">|sample_size        |NA    |         0|</span><span class="ch">\n</span><span class="st">|gender_1           |NA    |        53|</span><span class="ch">\n</span><span class="st">|gender_2           |NA    |        53|</span><span class="ch">\n</span><span class="st">|study_design       |NA    |         0|</span><span class="ch">\n</span><span class="st">|participant_design |NA    |         0|</span><span class="ch">\n</span><span class="st">|implementation     |NA    |       108|</span><span class="ch">\n</span><span class="st">|duration_week      |NA    |       108|</span><span class="ch">\n</span><span class="st">|frequency_n        |NA    |       108|</span><span class="ch">\n</span><span class="st">|intensity_n        |NA    |       108|</span><span class="ch">\n</span><span class="st">|m1i                |NA    |         0|</span><span class="ch">\n</span><span class="st">|sd1i               |NA    |         0|</span><span class="ch">\n</span><span class="st">|n1i                |NA    |         0|</span><span class="ch">\n</span><span class="st">|m2i                |NA    |         0|</span><span class="ch">\n</span><span class="st">|sd2i               |NA    |         0|</span><span class="ch">\n</span><span class="st">|n2i                |NA    |         0|</span><span class="ch">\n</span><span class="st">|ai                 |NA    |       108|</span><span class="ch">\n</span><span class="st">|bi                 |NA    |       108|</span><span class="ch">\n</span><span class="st">|ci                 |NA    |       108|</span><span class="ch">\n</span><span class="st">|di                 |NA    |       108|</span><span class="ch">\n</span><span class="st">|ri                 |NA    |       108|</span><span class="ch">\n</span><span class="st">|ni                 |NA    |       108|</span><span class="ch">\n</span><span class="st">|t                  |NA    |       108|</span><span class="ch">\n</span><span class="st">|f_stat             |NA    |       108|</span><span class="ch">\n</span><span class="st">|d                  |NA    |       108|</span><span class="ch">\n</span><span class="st">|d_var              |NA    |       108|</span><span class="ch">\n</span><span class="st">|rob                |NA    |       108|</span><span class="ch">\n</span><span class="st">|robins             |NA    |         0|</span><span class="ch">\n</span><span class="st">|outcome            |NA    |         0|</span><span class="ch">\n</span><span class="st">|outcome_full       |NA    |         0|</span><span class="ch">\n\n</span><span class="st">### Note</span><span class="ch">\n</span><span class="st">This dataset was automatically described using the [codebook R package](https://rubenarslan.github.io/codebook/) (version 0.9.2)."</span><span class="fu">,</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"keywords"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"unique_row"</span><span class="ot">,</span> <span class="st">"study_id"</span><span class="ot">,</span> <span class="st">"long_cite"</span><span class="ot">,</span> <span class="st">"short_cite"</span><span class="ot">,</span> <span class="st">"experiment_number"</span><span class="ot">,</span> <span class="st">"effect_size_number"</span><span class="ot">,</span> <span class="st">"peer_reviewed"</span><span class="ot">,</span> <span class="st">"country"</span><span class="ot">,</span> <span class="st">"mean_age"</span><span class="ot">,</span> <span class="st">"grade"</span><span class="ot">,</span> <span class="st">"sample_size"</span><span class="ot">,</span> <span class="st">"gender_1"</span><span class="ot">,</span> <span class="st">"gender_2"</span><span class="ot">,</span> <span class="st">"study_design"</span><span class="ot">,</span> <span class="st">"participant_design"</span><span class="ot">,</span> <span class="st">"implementation"</span><span class="ot">,</span> <span class="st">"duration_week"</span><span class="ot">,</span> <span class="st">"frequency_n"</span><span class="ot">,</span> <span class="st">"intensity_n"</span><span class="ot">,</span> <span class="st">"m1i"</span><span class="ot">,</span> <span class="st">"sd1i"</span><span class="ot">,</span> <span class="st">"n1i"</span><span class="ot">,</span> <span class="st">"m2i"</span><span class="ot">,</span> <span class="st">"sd2i"</span><span class="ot">,</span> <span class="st">"n2i"</span><span class="ot">,</span> <span class="st">"ai"</span><span class="ot">,</span> <span class="st">"bi"</span><span class="ot">,</span> <span class="st">"ci"</span><span class="ot">,</span> <span class="st">"di"</span><span class="ot">,</span> <span class="st">"ri"</span><span class="ot">,</span> <span class="st">"ni"</span><span class="ot">,</span> <span class="st">"t"</span><span class="ot">,</span> <span class="st">"f_stat"</span><span class="ot">,</span> <span class="st">"d"</span><span class="ot">,</span> <span class="st">"d_var"</span><span class="ot">,</span> <span class="st">"rob"</span><span class="ot">,</span> <span class="st">"robins"</span><span class="ot">,</span> <span class="st">"outcome"</span><span class="ot">,</span> <span class="st">"outcome_full"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"@context"</span><span class="fu">:</span> <span class="st">"http://schema.org/"</span><span class="fu">,</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Dataset"</span><span class="fu">,</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"variableMeasured"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"unique_row"</span><span class="fu">,</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"study_id"</span><span class="fu">,</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"long_cite"</span><span class="fu">,</span></span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"short_cite"</span><span class="fu">,</span></span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"experiment_number"</span><span class="fu">,</span></span>
+<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-29"><a href="#cb39-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-30"><a href="#cb39-30" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"effect_size_number"</span><span class="fu">,</span></span>
+<span id="cb39-31"><a href="#cb39-31" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-32"><a href="#cb39-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-33"><a href="#cb39-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-34"><a href="#cb39-34" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"peer_reviewed"</span><span class="fu">,</span></span>
+<span id="cb39-35"><a href="#cb39-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-36"><a href="#cb39-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-37"><a href="#cb39-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-38"><a href="#cb39-38" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"country"</span><span class="fu">,</span></span>
+<span id="cb39-39"><a href="#cb39-39" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-40"><a href="#cb39-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-41"><a href="#cb39-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-42"><a href="#cb39-42" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"mean_age"</span><span class="fu">,</span></span>
+<span id="cb39-43"><a href="#cb39-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-44"><a href="#cb39-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-45"><a href="#cb39-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-46"><a href="#cb39-46" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"grade"</span><span class="fu">,</span></span>
+<span id="cb39-47"><a href="#cb39-47" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-48"><a href="#cb39-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-49"><a href="#cb39-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-50"><a href="#cb39-50" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"sample_size"</span><span class="fu">,</span></span>
+<span id="cb39-51"><a href="#cb39-51" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-52"><a href="#cb39-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-53"><a href="#cb39-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-54"><a href="#cb39-54" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"gender_1"</span><span class="fu">,</span></span>
+<span id="cb39-55"><a href="#cb39-55" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-56"><a href="#cb39-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-57"><a href="#cb39-57" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-58"><a href="#cb39-58" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"gender_2"</span><span class="fu">,</span></span>
+<span id="cb39-59"><a href="#cb39-59" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-60"><a href="#cb39-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-61"><a href="#cb39-61" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-62"><a href="#cb39-62" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"study_design"</span><span class="fu">,</span></span>
+<span id="cb39-63"><a href="#cb39-63" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-64"><a href="#cb39-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-65"><a href="#cb39-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-66"><a href="#cb39-66" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"participant_design"</span><span class="fu">,</span></span>
+<span id="cb39-67"><a href="#cb39-67" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-68"><a href="#cb39-68" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-69"><a href="#cb39-69" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-70"><a href="#cb39-70" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"implementation"</span><span class="fu">,</span></span>
+<span id="cb39-71"><a href="#cb39-71" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-72"><a href="#cb39-72" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-73"><a href="#cb39-73" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-74"><a href="#cb39-74" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"duration_week"</span><span class="fu">,</span></span>
+<span id="cb39-75"><a href="#cb39-75" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-76"><a href="#cb39-76" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-77"><a href="#cb39-77" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-78"><a href="#cb39-78" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"frequency_n"</span><span class="fu">,</span></span>
+<span id="cb39-79"><a href="#cb39-79" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-80"><a href="#cb39-80" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-81"><a href="#cb39-81" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-82"><a href="#cb39-82" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"intensity_n"</span><span class="fu">,</span></span>
+<span id="cb39-83"><a href="#cb39-83" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-84"><a href="#cb39-84" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-85"><a href="#cb39-85" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-86"><a href="#cb39-86" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"m1i"</span><span class="fu">,</span></span>
+<span id="cb39-87"><a href="#cb39-87" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-88"><a href="#cb39-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-89"><a href="#cb39-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-90"><a href="#cb39-90" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"sd1i"</span><span class="fu">,</span></span>
+<span id="cb39-91"><a href="#cb39-91" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-92"><a href="#cb39-92" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-93"><a href="#cb39-93" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-94"><a href="#cb39-94" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"n1i"</span><span class="fu">,</span></span>
+<span id="cb39-95"><a href="#cb39-95" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-96"><a href="#cb39-96" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-97"><a href="#cb39-97" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-98"><a href="#cb39-98" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"m2i"</span><span class="fu">,</span></span>
+<span id="cb39-99"><a href="#cb39-99" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-100"><a href="#cb39-100" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-101"><a href="#cb39-101" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-102"><a href="#cb39-102" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"sd2i"</span><span class="fu">,</span></span>
+<span id="cb39-103"><a href="#cb39-103" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-104"><a href="#cb39-104" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-105"><a href="#cb39-105" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-106"><a href="#cb39-106" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"n2i"</span><span class="fu">,</span></span>
+<span id="cb39-107"><a href="#cb39-107" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-108"><a href="#cb39-108" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-109"><a href="#cb39-109" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-110"><a href="#cb39-110" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"ai"</span><span class="fu">,</span></span>
+<span id="cb39-111"><a href="#cb39-111" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-112"><a href="#cb39-112" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-113"><a href="#cb39-113" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-114"><a href="#cb39-114" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"bi"</span><span class="fu">,</span></span>
+<span id="cb39-115"><a href="#cb39-115" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-116"><a href="#cb39-116" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-117"><a href="#cb39-117" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-118"><a href="#cb39-118" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"ci"</span><span class="fu">,</span></span>
+<span id="cb39-119"><a href="#cb39-119" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-120"><a href="#cb39-120" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-121"><a href="#cb39-121" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-122"><a href="#cb39-122" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"di"</span><span class="fu">,</span></span>
+<span id="cb39-123"><a href="#cb39-123" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-124"><a href="#cb39-124" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-125"><a href="#cb39-125" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-126"><a href="#cb39-126" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"ri"</span><span class="fu">,</span></span>
+<span id="cb39-127"><a href="#cb39-127" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-128"><a href="#cb39-128" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-129"><a href="#cb39-129" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-130"><a href="#cb39-130" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"ni"</span><span class="fu">,</span></span>
+<span id="cb39-131"><a href="#cb39-131" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-132"><a href="#cb39-132" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-133"><a href="#cb39-133" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-134"><a href="#cb39-134" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"t"</span><span class="fu">,</span></span>
+<span id="cb39-135"><a href="#cb39-135" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-136"><a href="#cb39-136" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-137"><a href="#cb39-137" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-138"><a href="#cb39-138" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"f_stat"</span><span class="fu">,</span></span>
+<span id="cb39-139"><a href="#cb39-139" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-140"><a href="#cb39-140" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-141"><a href="#cb39-141" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-142"><a href="#cb39-142" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"d"</span><span class="fu">,</span></span>
+<span id="cb39-143"><a href="#cb39-143" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-144"><a href="#cb39-144" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-145"><a href="#cb39-145" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-146"><a href="#cb39-146" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"d_var"</span><span class="fu">,</span></span>
+<span id="cb39-147"><a href="#cb39-147" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-148"><a href="#cb39-148" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-149"><a href="#cb39-149" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-150"><a href="#cb39-150" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"rob"</span><span class="fu">,</span></span>
+<span id="cb39-151"><a href="#cb39-151" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-152"><a href="#cb39-152" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-153"><a href="#cb39-153" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-154"><a href="#cb39-154" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"robins"</span><span class="fu">,</span></span>
+<span id="cb39-155"><a href="#cb39-155" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-156"><a href="#cb39-156" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-157"><a href="#cb39-157" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-158"><a href="#cb39-158" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"outcome"</span><span class="fu">,</span></span>
+<span id="cb39-159"><a href="#cb39-159" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-160"><a href="#cb39-160" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb39-161"><a href="#cb39-161" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb39-162"><a href="#cb39-162" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"outcome_full"</span><span class="fu">,</span></span>
+<span id="cb39-163"><a href="#cb39-163" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"propertyValue"</span></span>
+<span id="cb39-164"><a href="#cb39-164" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb39-165"><a href="#cb39-165" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb39-166"><a href="#cb39-166" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span><span class="er">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
