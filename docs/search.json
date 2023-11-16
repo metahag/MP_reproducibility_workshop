@@ -4,14 +4,14 @@
     "href": "index.html#agenda",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "Agenda",
-    "text": "Agenda\n\nMeta-Psychology computational reproducibility assessment\nCommon errors in computational reproducibility\nBest practices for reproducible rnalyses\nExercise (1 hour)\nDiscussion (15 min)"
+    "text": "Agenda\n\nMeta-Psychology computational reproducibility assessment\nCommon errors in computational reproducibility\nBest practices for reproducible analyses \nDiscussion"
   },
   {
     "objectID": "index.html#quick-overview-of-the-exercise",
     "href": "index.html#quick-overview-of-the-exercise",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "Quick overview of the exercise",
-    "text": "Quick overview of the exercise\n\ntry to reproduce code from a paper accepted for publication in MP\nnote down what’s causing troubles in reproducing the paper\nnote down what is correctly done\ncompare the results from the code output to reported results in the manuscript ## Introduction to reproducibility"
+    "text": "Quick overview of the exercise\n\ntry to reproduce code from a paper accepted for publication in MP\nnote down what’s causing troubles in reproducing the paper\nnote down what is correctly done\ncompare the results from the code output to reported results in the manuscript"
   },
   {
     "objectID": "index.html#transparency-is-a-way-out-of-the-replication-crisis",
@@ -25,7 +25,7 @@
     "href": "index.html#meta-psychology",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "Meta-Psychology",
-    "text": "Meta-Psychology\n\nMeta-Psychology pioneering in this area (#1 on TOP FACTOR)\nMeta-Psychology is a community run journal\nNo APC (Diamond OA)\nPublishes anything “meta” in psychology:\n\nreviews, meta-analyses, commentaries, replications.\n\nEducational psychology is, of course an important area\nThis talk is our 5 years experience with computational reproducibility at MP"
+    "text": "Meta-Psychology\n\nMeta-Psychology pioneering in this area (#1 on TOP FACTOR)\nMeta-Psychology is a community run journal\nNo APC (Diamond OA)\nPublishes anything “meta” in psychology:\n\nreviews, meta-analyses, commentaries, replications.\n\nThis talk is our 5 years experience with computational reproducibility at MP"
   },
   {
     "objectID": "index.html#overview",
@@ -81,7 +81,7 @@
     "href": "index.html#setting-seed-for-simulations",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "Setting Seed for Simulations",
-    "text": "Setting Seed for Simulations\n\nbootstrapping confidence intervals\nsimulating datasets\n\n\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1] -0.6012927 -0.2283838  1.1665396 -0.9684096 -1.1654360 -0.4124760\n\n\n\nset.seed(1234)\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1] -1.2070657  0.2774292  1.0844412 -2.3456977  0.4291247  0.5060559"
+    "text": "Setting Seed for Simulations\n\nbootstrapping confidence intervals\nsimulating datasets\n\n\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1] -0.86943091 -1.02729501  0.15032230 -1.48502696 -0.15172372  0.07539084\n\n\n\nset.seed(1234)\nhead(rnorm(100, mean = 0, sd = 1))\n\n[1] -1.2070657  0.2774292  1.0844412 -2.3456977  0.4291247  0.5060559"
   },
   {
     "objectID": "index.html#wrong-roundingcopy-paste-errors",
@@ -116,7 +116,7 @@
     "href": "index.html#readme-and-codebook-files",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "README and codebook files",
-    "text": "README and codebook files\n\n\n\nREADME\n\n\nComputing environment; package version and time necessary to compute (show reproducibility checklists)\nProject description: A brief description of the project and its purpose.\nInstallation instructions: Step-by-step instructions on how to install and set up the project. This should include any dependencies or prerequisites required to run the project\n\n\n\n\n\nCodebook\n\n\nOverview of all variables: name and description of each variable\nDescription"
+    "text": "README and codebook files\n\n\n\nREADME\n\n\nComputing environment; package version and time necessary to compute (show reproducibility checklists)\nProject description: A brief description of the project and its purpose.\nInstallation instructions: Step-by-step instructions on how to install and set up the project. This should include any dependencies or prerequisites required to run the project\n\n\n\n\n\nCodebook\n\nOverview of all variables: name and description of each variable\ncodebook\n\n\nlibrary(codebook)\nnew_codebook_rmd(codebook)"
   },
   {
     "objectID": "index.html#containerization",
@@ -137,6 +137,34 @@
     "href": "index.html#task",
     "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
     "section": "Task",
-    "text": "Task\n\ntry to reproduce code from a paper accepted for publication in MP\nnote down what’s causing troubles in reproducing the paper (if anything)\nnote down what is correctly done\ncompare the results from the code output to reported results in the manuscript\n\n\n\nMeta-Psychology"
+    "text": "Task\n\ntry to reproduce code from a paper accepted for publication in MP\ntry to reproduce code from one of the participants’ projects\nnote down what’s causing troubles in reproducing the paper (if anything)\nnote down what is correctly done\ncompare the results from the code output to reported results in the manuscript\n\n\n\nMeta-Psychology"
+  },
+  {
+    "objectID": "codebook.html",
+    "href": "codebook.html",
+    "title": "Codebook",
+    "section": "",
+    "text": "Here, we’re just setting a few options.\nNow, we’re preparing our data for the codebook.\nCreate codebook"
+  },
+  {
+    "objectID": "codebook.html#missingness-report",
+    "href": "codebook.html#missingness-report",
+    "title": "Codebook",
+    "section": "Missingness report",
+    "text": "Missingness report"
+  },
+  {
+    "objectID": "codebook.html#codebook-table",
+    "href": "codebook.html#codebook-table",
+    "title": "Codebook",
+    "section": "Codebook table",
+    "text": "Codebook table"
+  },
+  {
+    "objectID": "index.html#power-of-ai",
+    "href": "index.html#power-of-ai",
+    "title": "Why your code doesn’t reproduce: Lessons learned from Meta-Psychology",
+    "section": "Power of AI",
+    "text": "Power of AI\n\nwith the rise of ChatGPT and LLM-based apps accessible to public, there is no reason why provided materials cannot be well documented\n\nExamples of use that can save time and promote reproducibility (ideas provided by ChatGPT):\n\n\n\n\n\n\n\n\nNumber\nTask\nDescription\n\n\n\n\n1\nDrafting Detailed Documentation\nChatGPT can assist in writing comprehensive documentation that covers all aspects of the code including installation, usage, and troubleshooting.\n\n\n2\nGenerating README Files\nIt can create README files that provide a clear overview of the project, setup instructions, and usage guidelines.\n\n\n3\nPreparing Installation Guides\nChatGPT can write detailed installation guides to ensure users can recreate the necessary environment to run the code.\n\n\n4\nAutomating Responses to Common Issues\nIt can draft standard responses for common issues or questions for inclusion in an FAQ section.\n\n\n5\nCreating Example Code Snippets\nChatGPT can generate code snippets to demonstrate the usage of different functions or classes.\n\n\n6\nWriting Test Scripts\nIt can assist in writing test scripts to verify the functionality of different parts of the code.\n\n\n7\nDeveloping Code Annotations\nChatGPT can help annotate code, providing explanations for complex sections and clarifying the logic behind certain decisions.\n\n\n8\nAssisting with Dependency Lists\nIt can help compile and explain a list of dependencies, ensuring all necessary packages are included.\n\n\n9\nFormatting and Linting Code\nChatGPT can offer guidance on code formatting and linting to ensure the code adheres to standard practices.\n\n\n10\nCreating Data Preprocessing Scripts\nFor projects involving data, it can help write scripts for data cleaning and preprocessing.\n\n\n11\nDrafting Contribution Guidelines\nChatGPT can formulate guidelines for how others can contribute to the project.\n\n\n12\nVersion Control Guidance\nIt can provide tips on using version control systems effectively for tracking changes and ensuring reproducibility.\n\n\n13\nGenerating Virtual Environment Setup Instructions\nChatGPT can guide the creation of instructions for setting up virtual environments.\n\n\n14\nAssisting with Continuous Integration Setup\nIt can offer insights into setting up CI/CD pipelines for automated testing and consistency across environments.\n\n\n15\nAdvising on Licensing Issues\nChatGPT can provide information on different software licenses to help authors choose the right one for their code."
   }
 ]

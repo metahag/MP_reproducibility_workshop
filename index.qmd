@@ -1,7 +1,7 @@
 ---
 title: "Why your code doesn't reproduce: Lessons learned from Meta-Psychology"
 title-slide-style: pandoc
-author: "Lucija Batinovic & Rickard Carlsson<br>Meta-Psychology<br>June 23, 2023"
+author: "Lucija Batinovic & Rickard Carlsson<br>Meta-Psychology<br>November 16, 2023"
 format:
   revealjs:
     slide-number: c/t
@@ -23,15 +23,15 @@ format:
  
 -   Meta-Psychology computational reproducibility assessment
 -   Common errors in computational reproducibility
--   Best practices for reproducible rnalyses
--   Exercise (1 hour)
--   Discussion (15 min)
+-   Best practices for reproducible analyses
+<!---   Exercise (1 hour) -->
+-   Discussion <!---(15 min)-->
 
-## Quick overview of the exercise
+<!-- ## Quick overview of the exercise
 - try to reproduce code from a paper accepted for publication in MP
 - note down what's causing troubles in reproducing the paper
 - note down what is correctly done
-- compare the results from the code output to reported results in the manuscript
+- compare the results from the code output to reported results in the manuscript -->
 
 # Introduction to reproducibility
 
@@ -49,7 +49,6 @@ format:
 - No APC (Diamond OA)
 - Publishes anything “meta” in psychology:
     - reviews, meta-analyses, commentaries, replications.
-- Educational psychology is, of course an important area
 - This talk is our 5 years experience with computational reproducibility at MP
 
 
@@ -276,14 +275,39 @@ new_codebook_rmd(codebook)
 *Note: although .omv (jamovi) files include datasets, always provide raw .tsv/.csv files separately
 ![](images/jamovi-lr.png){fig-align="center"}
 
+## Power of AI {.smaller}
+- with the rise of ChatGPT and LLM-based apps accessible to public, there is no reason why provided materials cannot be well documented
+
+Examples of use that can save time and promote reproducibility (ideas provided by ChatGPT):
+
+| Number | Task                                       | Description                                                                                                          |
+| ------ | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| 1      | **Drafting Detailed Documentation**        | ChatGPT can assist in writing comprehensive documentation that covers all aspects of the code including installation, usage, and troubleshooting. |
+| 2      | **Generating README Files**                | It can create README files that provide a clear overview of the project, setup instructions, and usage guidelines.   |
+| 3      | **Preparing Installation Guides**          | ChatGPT can write detailed installation guides to ensure users can recreate the necessary environment to run the code. |
+| 4      | **Automating Responses to Common Issues**  | It can draft standard responses for common issues or questions for inclusion in an FAQ section.                      |
+| 5      | **Creating Example Code Snippets**         | ChatGPT can generate code snippets to demonstrate the usage of different functions or classes.                       |
+| 6      | **Writing Test Scripts**                   | It can assist in writing test scripts to verify the functionality of different parts of the code.                    |
+| 7      | **Developing Code Annotations**            | ChatGPT can help annotate code, providing explanations for complex sections and clarifying the logic behind certain decisions. |
+| 8      | **Assisting with Dependency Lists**        | It can help compile and explain a list of dependencies, ensuring all necessary packages are included.                |
+| 9      | **Formatting and Linting Code**            | ChatGPT can offer guidance on code formatting and linting to ensure the code adheres to standard practices.          |
+| 10     | **Creating Data Preprocessing Scripts**    | For projects involving data, it can help write scripts for data cleaning and preprocessing.                          |
+| 11     | **Drafting Contribution Guidelines**       | ChatGPT can formulate guidelines for how others can contribute to the project.                                       |
+| 12     | **Version Control Guidance**               | It can provide tips on using version control systems effectively for tracking changes and ensuring reproducibility.  |
+| 13     | **Generating Virtual Environment Setup Instructions** | ChatGPT can guide the creation of instructions for setting up virtual environments.                                |
+| 14     | **Assisting with Continuous Integration Setup** | It can offer insights into setting up CI/CD pipelines for automated testing and consistency across environments.   |
+| 15     | **Advising on Licensing Issues**           | ChatGPT can provide information on different software licenses to help authors choose the right one for their code. |
 
 
-# Practice
+
+# Discussion
+
+<!-- # Practice
 
 ## Task
 - try to reproduce code from a paper accepted for publication in MP 
 - try to reproduce code from one of the participants' projects
 - note down what's causing troubles in reproducing the paper (if anything)
 - note down what is correctly done
-- compare the results from the code output to reported results in the manuscript
+- compare the results from the code output to reported results in the manuscript -->
 

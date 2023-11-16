@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.335">
 
-  <meta name="author" content="Lucija Batinovic &amp; Rickard Carlsson Meta-Psychology June 23, 2023">
+  <meta name="author" content="Lucija Batinovic &amp; Rickard Carlsson Meta-Psychology November 16, 2023">
   <title>MP_Repro_workshop - Why your code doesn’t reproduce: Lessons learned from Meta-Psychology</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -390,26 +390,21 @@
 
 <section id="title-slide" data-background-image="images/logo.png" data-background-position="1.5% 1.5%" data-background-size="17%" class="center">
   <h1 class="title">Why your code doesn’t reproduce: Lessons learned from Meta-Psychology</h1>
-  <p class="author">Lucija Batinovic &amp; Rickard Carlsson<br>Meta-Psychology<br>June 23, 2023</p>
+  <p class="author">Lucija Batinovic &amp; Rickard Carlsson<br>Meta-Psychology<br>November 16, 2023</p>
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
 <li>Meta-Psychology computational reproducibility assessment</li>
 <li>Common errors in computational reproducibility</li>
-<li>Best practices for reproducible rnalyses</li>
-<li>Exercise (1 hour)</li>
-<li>Discussion (15 min)</li>
+<li>Best practices for reproducible analyses <!---   Exercise (1 hour) --></li>
+<li>Discussion <!---(15 min)--></li>
 </ul>
-</section>
-<section id="quick-overview-of-the-exercise" class="slide level2">
-<h2>Quick overview of the exercise</h2>
-<ul>
-<li>try to reproduce code from a paper accepted for publication in MP</li>
-<li>note down what’s causing troubles in reproducing the paper</li>
-<li>note down what is correctly done</li>
-<li>compare the results from the code output to reported results in the manuscript</li>
-</ul>
+<!-- ## Quick overview of the exercise
+- try to reproduce code from a paper accepted for publication in MP
+- note down what's causing troubles in reproducing the paper
+- note down what is correctly done
+- compare the results from the code output to reported results in the manuscript -->
 </section>
 <section>
 <section id="introduction-to-reproducibility" class="title-slide slide level1 center">
@@ -438,7 +433,6 @@
 <ul>
 <li>reviews, meta-analyses, commentaries, replications.</li>
 </ul></li>
-<li>Educational psychology is, of course an important area</li>
 <li>This talk is our 5 years experience with computational reproducibility at MP</li>
 </ul>
 </section></section>
@@ -573,7 +567,7 @@ Common reasons why a function may not run properly:
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">head</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.00221049 0.37273114 0.41233889 0.12024461 2.34815103 0.05332354</code></pre>
+<pre><code>[1] -0.86943091 -1.02729501  0.15032230 -1.48502696 -0.15172372  0.07539084</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -714,26 +708,120 @@ Common reasons why a function may not run properly:
 <li>open source: <a href="https://jasp-stats.org/">JASP</a> or <a href="https://www.jamovi.org/">JAMOVI</a></li>
 <li>jamovi files can be saved with analyses and edited data in a transparent way *Note: although .omv (jamovi) files include datasets, always provide raw .tsv/.csv files separately <img data-src="images/jamovi-lr.png" data-fig-align="center"></li>
 </ul>
-</section></section>
-<section>
-<section id="practice" class="title-slide slide level1 center">
-<h1>Practice</h1>
-
 </section>
-<section id="task" class="slide level2">
-<h2>Task</h2>
+<section id="power-of-ai" class="slide level2 smaller">
+<h2>Power of AI</h2>
 <ul>
-<li>try to reproduce code from a paper accepted for publication in MP</li>
-<li>try to reproduce code from one of the participants’ projects</li>
-<li>note down what’s causing troubles in reproducing the paper (if anything)</li>
-<li>note down what is correctly done</li>
-<li>compare the results from the code output to reported results in the manuscript</li>
+<li>with the rise of ChatGPT and LLM-based apps accessible to public, there is no reason why provided materials cannot be well documented</li>
 </ul>
+<p>Examples of use that can save time and promote reproducibility (ideas provided by ChatGPT):</p>
+<table>
+<colgroup>
+<col style="width: 3%">
+<col style="width: 25%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Number</th>
+<th>Task</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><strong>Drafting Detailed Documentation</strong></td>
+<td>ChatGPT can assist in writing comprehensive documentation that covers all aspects of the code including installation, usage, and troubleshooting.</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><strong>Generating README Files</strong></td>
+<td>It can create README files that provide a clear overview of the project, setup instructions, and usage guidelines.</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><strong>Preparing Installation Guides</strong></td>
+<td>ChatGPT can write detailed installation guides to ensure users can recreate the necessary environment to run the code.</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><strong>Automating Responses to Common Issues</strong></td>
+<td>It can draft standard responses for common issues or questions for inclusion in an FAQ section.</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><strong>Creating Example Code Snippets</strong></td>
+<td>ChatGPT can generate code snippets to demonstrate the usage of different functions or classes.</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><strong>Writing Test Scripts</strong></td>
+<td>It can assist in writing test scripts to verify the functionality of different parts of the code.</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><strong>Developing Code Annotations</strong></td>
+<td>ChatGPT can help annotate code, providing explanations for complex sections and clarifying the logic behind certain decisions.</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td><strong>Assisting with Dependency Lists</strong></td>
+<td>It can help compile and explain a list of dependencies, ensuring all necessary packages are included.</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><strong>Formatting and Linting Code</strong></td>
+<td>ChatGPT can offer guidance on code formatting and linting to ensure the code adheres to standard practices.</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><strong>Creating Data Preprocessing Scripts</strong></td>
+<td>For projects involving data, it can help write scripts for data cleaning and preprocessing.</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><strong>Drafting Contribution Guidelines</strong></td>
+<td>ChatGPT can formulate guidelines for how others can contribute to the project.</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td><strong>Version Control Guidance</strong></td>
+<td>It can provide tips on using version control systems effectively for tracking changes and ensuring reproducibility.</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td><strong>Generating Virtual Environment Setup Instructions</strong></td>
+<td>ChatGPT can guide the creation of instructions for setting up virtual environments.</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td><strong>Assisting with Continuous Integration Setup</strong></td>
+<td>It can offer insights into setting up CI/CD pipelines for automated testing and consistency across environments.</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><strong>Advising on Licensing Issues</strong></td>
+<td>ChatGPT can provide information on different software licenses to help authors choose the right one for their code.</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section id="discussion" class="title-slide slide level1 center">
+<h1>Discussion</h1>
+<!-- # Practice
+
+## Task
+- try to reproduce code from a paper accepted for publication in MP 
+- try to reproduce code from one of the participants' projects
+- note down what's causing troubles in reproducing the paper (if anything)
+- note down what is correctly done
+- compare the results from the code output to reported results in the manuscript -->
 
 <div class="footer footer-default">
 <p><a href="https://open.lnu.se/index.php/metapsychology/index">Meta-Psychology</a></p>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
